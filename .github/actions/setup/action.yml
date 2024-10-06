@@ -11,3 +11,4 @@ runs:
         node-version: 20.x
     - name: Install Dependencies
       run: npm ci
+      shell: bash
