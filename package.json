@@ -8,17 +8,20 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev",
-    "format": "prettier . --write",
-    "format:check": "prettier . --check",
-    "lint": "next lint --dir . --max-warnings 0",
+    "format": "prettier --write",
+    "format:all": "npm run format -- .",
+    "format:check": "prettier --check",
+    "format:check:all": "npm run format:check -- .",
+    "lint": "next lint --max-warnings 0",
+    "lint:all": "npm run lint -- --dir .",
     "start": "next start",
     "test:e2e": "playwright",
-    "test:e2e:codegen": "playwright codegen",
-    "test:e2e:install": "playwright install --with-deps",
-    "test:e2e:run": "playwright test --pass-with-no-tests",
-    "test:e2e:open": "playwright test --ui",
+    "test:e2e:codegen": "npm run test:e2e -- codegen",
+    "test:e2e:install": "npm run test:e2e -- install --with-deps",
+    "test:e2e:run": "npm run test:e2e -- test --pass-with-no-tests",
+    "test:e2e:open": "npm run test:e2e -- test --ui",
     "test:unit": "jest",
-    "test:unit:watch": "jest --watch"
+    "test:unit:watch": "npm run test:unit -- --watch"
   },
   "dependencies": {
     "next": "14.2.14",
