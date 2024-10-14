@@ -8,6 +8,7 @@
 
 # testing
 /coverage
+/jest/globals.css
 
 # next.js
 /.next/

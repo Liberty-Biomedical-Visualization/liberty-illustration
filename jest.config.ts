@@ -7,6 +7,8 @@ const config: Config = {
   collectCoverageFrom: ["<rootDir>/src/**/*.ts?(x)"],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
+  globalSetup: "<rootDir>/jest/global-setup.ts",
+  globalTeardown: "<rootDir>/jest/global-teardown.ts",
   passWithNoTests: true,
   preset: "ts-jest",
   setupFilesAfterEnv: ["<rootDir>/jest/setup.ts"],
