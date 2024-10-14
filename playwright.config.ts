@@ -1,6 +1,10 @@
-import { defineConfig, devices } from "@playwright/test";
+import {
+  defineConfig,
+  devices,
+  type PlaywrightTestConfig,
+} from "@playwright/test";
 
-export default defineConfig({
+const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
   fullyParallel: true,
   projects: [
@@ -29,5 +33,10 @@ export default defineConfig({
     reuseExistingServer: !process.env.CI,
     url: "http://localhost:3000",
   },
-  workers: process.env.CI ? 1 : undefined,
-});
+};
+
+if (process.env.CI) {
+  config.workers = 1;
+}
+
+export default defineConfig(config);
