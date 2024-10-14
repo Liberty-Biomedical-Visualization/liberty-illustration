@@ -7,7 +7,7 @@ const snapshotResolver = {
     return snapshotFilepath.replace(snapshotExtension, "");
   },
 
-  testPathForConsistencyCheck: "some/__tests__/example.test.js",
+  testPathForConsistencyCheck: "some/path/example.spec.ts",
 };
 
 export default snapshotResolver;

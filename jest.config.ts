@@ -8,8 +8,8 @@ const config: Config = {
   coverageProvider: "v8",
   passWithNoTests: true,
   preset: "ts-jest",
-  setupFilesAfterEnv: ["<rootDir>/jest.setup.ts"],
-  snapshotResolver: "./jest.snapshot-resolver.ts",
+  setupFilesAfterEnv: ["<rootDir>/jest/setup.ts"],
+  snapshotResolver: "<rootDir>/jest/snapshot-resolver.ts",
   testEnvironment: "jsdom",
   testMatch: ["<rootDir>/src/**/*.spec.ts?(x)"],
   transform: {
