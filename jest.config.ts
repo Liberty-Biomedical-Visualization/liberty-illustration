@@ -4,6 +4,7 @@ import nextJest from "next/jest";
 const config: Config = {
   clearMocks: true,
   collectCoverage: true,
+  collectCoverageFrom: ["<rootDir>/src/**/*.ts?(x)"],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
   passWithNoTests: true,
