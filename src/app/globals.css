@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 :root {
+  --accent-50: #e0f7fc;
+  --accent-100: #b2e0f0;
+  --accent-200: #80c8e8;
+  --accent-300: #4db0d7;
+  --accent-400: #1a99ce;
+  --accent-500: #0398ce;
+  --accent-600: #0280a5;
+  --accent-700: #026d88;
+  --accent-800: #025a6b;
+  --accent-900: #023d4d;
+  --accent-950: #012c3a;
   --background: #ffffff;
   --foreground: #171717;
 }
