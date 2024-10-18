@@ -21,7 +21,6 @@ function buildLintCommand(fileNames) {
   return `npm run lint -- --file ${fileNamesString}`;
 }
 
-function buildTypeCheckCommand(fileNames) {
-  const fileNamesString = fileNames.join(" ");
-  return `npm run type-check -- ${fileNamesString}`;
+function buildTypeCheckCommand() {
+  return `npm run type-check`;
 }
