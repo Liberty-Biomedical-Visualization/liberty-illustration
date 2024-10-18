@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AccessiblyHiddenText should match the snapshot 1`] = `
+<div>
+  <span
+    class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+  >
+    This is some accessible but visually hidden text.
+  </span>
+</div>
+`;
