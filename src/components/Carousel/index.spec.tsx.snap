@@ -1,0 +1,291 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel when passed multiple images should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex justify-center"
+  >
+    <button
+      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-chevron-left "
+        data-icon="chevron-left"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Previous image
+      </span>
+    </button>
+    <div
+      class="flex flex-nowrap overflow-hidden w-260"
+    >
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as C and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image C"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex items-center min-w-full px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as A and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image A"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as B and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image B"
+          width="100"
+        />
+      </div>
+    </div>
+    <button
+      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-chevron-right "
+        data-icon="chevron-right"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Next image
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Carousel when passed one image should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex justify-center"
+  >
+    <div
+      class="flex flex-nowrap overflow-hidden w-260"
+    >
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as A and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image A"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex items-center min-w-full px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as A and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image A"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as A and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image A"
+          width="100"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Carousel when passed two images should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex justify-center"
+  >
+    <button
+      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-chevron-left "
+        data-icon="chevron-left"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Previous image
+      </span>
+    </button>
+    <div
+      class="flex flex-nowrap overflow-hidden w-260"
+    >
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as B and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image B"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex items-center min-w-full px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as A and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image A"
+          width="100"
+        />
+      </div>
+      <div
+        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      >
+        <img
+          alt="An imaginary image identified as B and used for testing."
+          class="max-h-full max-w-full mx-auto object-contain"
+          data-nimg="1"
+          decoding="async"
+          height="100"
+          loading="lazy"
+          src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+          srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+          style="color: transparent;"
+          title="Image B"
+          width="100"
+        />
+      </div>
+    </div>
+    <button
+      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-chevron-right "
+        data-icon="chevron-right"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 320 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Next image
+      </span>
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Carousel when passed zero images should match the snapshot 1`] = `<div />`;

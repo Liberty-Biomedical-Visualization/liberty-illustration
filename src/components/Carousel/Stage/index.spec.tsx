@@ -3,7 +3,7 @@ import { screen } from "@testing-library/dom";
 
 import createTestRender from "@/utils/createTestRender";
 
-import { imageA, imageB, imageC } from "./test-data";
+import { imageA, imageB, imageC } from "../test-data";
 import CarouselStage from ".";
 
 describe("CarouselStage", () => {
