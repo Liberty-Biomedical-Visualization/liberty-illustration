@@ -1,0 +1,181 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarouselStage when transition is next should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-nowrap overflow-hidden w-260"
+  >
+    <div
+      class="-translate-x-full duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition w-full"
+    >
+      <img
+        alt="An imaginary image identified as C and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image C"
+        width="100"
+      />
+    </div>
+    <div
+      class="-translate-x-full duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition w-full"
+    >
+      <img
+        alt="An imaginary image identified as A and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image A"
+        width="100"
+      />
+    </div>
+    <div
+      class="-translate-x-full duration-1000 flex items-center min-w-full px-2 relative right-full transform transition w-full"
+    >
+      <img
+        alt="An imaginary image identified as B and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image B"
+        width="100"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CarouselStage when transition is null should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-nowrap overflow-hidden w-260"
+  >
+    <div
+      class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as C and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image C"
+        width="100"
+      />
+    </div>
+    <div
+      class="flex items-center min-w-full px-2 relative right-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as A and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image A"
+        width="100"
+      />
+    </div>
+    <div
+      class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as B and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image B"
+        width="100"
+      />
+    </div>
+  </div>
+</div>
+`;
+
+exports[`CarouselStage when transition is previous should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex flex-nowrap overflow-hidden w-260"
+  >
+    <div
+      class="duration-1000 flex items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as C and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image C"
+        width="100"
+      />
+    </div>
+    <div
+      class="duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition translate-x-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as A and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image A"
+        width="100"
+      />
+    </div>
+    <div
+      class="duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
+    >
+      <img
+        alt="An imaginary image identified as B and used for testing."
+        class="max-h-full max-w-full mx-auto object-contain"
+        data-nimg="1"
+        decoding="async"
+        height="100"
+        loading="lazy"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+        style="color: transparent;"
+        title="Image B"
+        width="100"
+      />
+    </div>
+  </div>
+</div>
+`;
