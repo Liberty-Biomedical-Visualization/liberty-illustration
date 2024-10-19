@@ -23,7 +23,7 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
       - name: Check Types
-        run: npm run type-check:all
+        run: npm run type-check
   lint:
     name: Lint
     runs-on: ubuntu-latest

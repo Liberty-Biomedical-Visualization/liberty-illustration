@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CarouselSlide should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex items-center min-w-full px-2 w-full"
+  >
+    <img
+      alt="An imaginary image used for testing."
+      class="max-h-full max-w-full mx-auto object-contain"
+      data-nimg="1"
+      decoding="async"
+      height="100"
+      loading="lazy"
+      src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fimg.jpg&w=256&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fimg.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fimg.jpg&w=256&q=75 2x"
+      style="color: transparent;"
+      title="Test Image"
+      width="100"
+    />
+  </div>
+</div>
+`;
