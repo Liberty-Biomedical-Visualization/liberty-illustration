@@ -2,19 +2,19 @@ import type { Config } from "jest";
 import nextJest from "next/jest";
 
 const config: Config = {
-  clearMocks: true,
   collectCoverage: true,
-  collectCoverageFrom: ["<rootDir>/src/**/*.ts?(x)"],
+  collectCoverageFrom: [
+    "<rootDir>/src/**/!(*.spec|*.test).ts?(x)",
+    "!<rootDir>/src/app/**",
+  ],
   coverageDirectory: "coverage",
   coverageProvider: "v8",
-  globalSetup: "<rootDir>/jest/global-setup.ts",
-  globalTeardown: "<rootDir>/jest/global-teardown.ts",
   passWithNoTests: true,
-  preset: "ts-jest",
-  setupFilesAfterEnv: ["<rootDir>/jest/setup.ts"],
-  snapshotResolver: "<rootDir>/jest/snapshot-resolver.ts",
-  testEnvironment: "jsdom",
-  testMatch: ["<rootDir>/src/**/*.spec.ts?(x)"],
+  projects: [
+    "<rootDir>/jest.component.config.ts",
+    "<rootDir>/jest.integration.config.ts",
+    "<rootDir>/jest.unit.config.ts",
+  ],
   transform: {
     "^.+.tsx?$": ["ts-jest", {}],
   },
