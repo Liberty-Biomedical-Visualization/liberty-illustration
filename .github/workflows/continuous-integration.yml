@@ -56,8 +56,8 @@ jobs:
           name: playwright-report
           path: playwright-report/
           retention-days: 30
-  test-unit:
-    name: Run Unit Tests
+  test-integration-unit:
+    name: Run Integration and Unit Tests
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -65,4 +65,4 @@ jobs:
       - name: Setup
         uses: ./.github/actions/setup
       - name: Test
-        run: npm run test:unit
+        run: npm run test
