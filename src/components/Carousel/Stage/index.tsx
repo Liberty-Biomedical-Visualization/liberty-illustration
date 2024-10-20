@@ -1,4 +1,4 @@
-import resolveClassNames from "@/utils/resolveClassNames";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 import CarouselSlide, { type CarouselSlideProps } from "../Slide";
 

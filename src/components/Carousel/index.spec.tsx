@@ -2,7 +2,7 @@ import { afterEach, describe, expect, it, jest } from "@jest/globals";
 import { act, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import createTestRender from "@/utils/createTestRender";
+import createTestRender from "@/lib/createTestRender";
 
 import { imageA, imageB, imageC } from "./test-data";
 import Carousel from ".";

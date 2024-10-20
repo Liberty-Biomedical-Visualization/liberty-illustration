@@ -8,7 +8,7 @@ import {
   useState,
 } from "react";
 
-import resolveClassNames from "@/utils/resolveClassNames";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 import CarouselButton from "./Button";
 import CarouselStage, { type CarouselStageProps } from "./Stage";

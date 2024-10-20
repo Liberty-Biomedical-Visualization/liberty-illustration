@@ -1,7 +1,7 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/react";
 
-import createTestRender from "@/utils/createTestRender";
+import createTestRender from "@/lib/createTestRender";
 
 import CarouselSlide from ".";
 
