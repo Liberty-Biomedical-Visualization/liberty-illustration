@@ -54,7 +54,13 @@ $ npm run lint:all
 
 ### Testing
 
-This project supports both E2E and unit testing.
+This project supports E2E, integration, and unit testing.
+
+Integration and unit tests can be run together to produce a coverage report:
+
+```bash
+$ npm run test
+```
 
 #### E2E tests
 
@@ -79,7 +85,19 @@ To run an interactive GUI to record E2E tests:
 $ npm run test:e2e:codegen
 ```
 
+#### Integration tests
+
+Integration tests contain a `.test` segment before the `.ts` file extension.
+
+To run integration tests:
+
+```bash
+$ npm run test:integration
+```
+
 #### Unit tests
+
+Unit tests contain a `.spec` segment before the `.ts` or `.tsx` file extension.
 
 To run unit tests:
 

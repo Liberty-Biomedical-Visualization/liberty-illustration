@@ -8,7 +8,8 @@ import {
   useState,
 } from "react";
 
-import resolveClassNames from "@/utils/resolveClassNames";
+import atChecked from "@/lib/atChecked";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 import CarouselButton from "./Button";
 import CarouselStage, { type CarouselStageProps } from "./Stage";
@@ -86,9 +87,9 @@ export default function Carousel(props: Readonly<CarouselProps>) {
   const className = resolveClassNames("flex justify-center", props.className);
   const buttonsAreDisplayed = images.length > 1;
   const buttonsAreDisabled = transition !== null;
-  const currentImage = images[currentIndex];
-  const nextImage = images[nextIndex];
-  const previousImage = images[previousIndex];
+  const currentImage = atChecked(images, currentIndex);
+  const nextImage = atChecked(images, nextIndex);
+  const previousImage = atChecked(images, previousIndex);
 
   return (
     <div className={className}>

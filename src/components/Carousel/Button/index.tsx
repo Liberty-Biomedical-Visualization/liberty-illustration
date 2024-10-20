@@ -5,7 +5,7 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import AccessiblyHiddenText from "@/components/AccessiblyHiddenText";
-import resolveClassNames from "@/utils/resolveClassNames";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 export default function CarouselButton(props: Readonly<CarouselButtonProps>) {
   const { disabled, onClick, type } = props;

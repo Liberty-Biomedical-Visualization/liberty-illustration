@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import resolveClassNames from "@/utils/resolveClassNames";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
   const { image } = props;

@@ -2,7 +2,7 @@ import { describe, expect, jest, it } from "@jest/globals";
 import { screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import createTestRender from "@/utils/createTestRender";
+import createTestRender from "@/lib/createTestRender";
 
 import CarouselButton from ".";
 
