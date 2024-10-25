@@ -8,6 +8,18 @@ The project has an automated continuous integration workflow that performs
 linting, testing, and other quality control processes on pull requests to the
 `main` branch.
 
+## Environment variables
+
+The following environment variables are required to build and test this website:
+
+- `CONTENTFUL_ACCESS_TOKEN`
+- `CONTENTFUL_ENVIRONMENT`
+- `CONTENTFUL_SPACE_ID`
+
+When possible, environment variables should be access through the
+`src/lib/config.ts` module. This module validates that the environment is
+complete and will fail fast should a value be undefined.
+
 ## Scripts
 
 ### Development
