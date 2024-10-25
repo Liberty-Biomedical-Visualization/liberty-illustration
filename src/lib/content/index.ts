@@ -42,7 +42,7 @@ export interface ImageGallery {
 /**
  * Gets a `JsonReference` by title.
  *
- * Throws an error if the JSON is not found.
+ * Throws an error if the JSON is not found or not properly structured.
  */
 export async function getJsonByTitle<K extends JsonTitle>(title: K) {
   const jsons = await client.getEntries<JsonSkeleton<Json<K>>>({
