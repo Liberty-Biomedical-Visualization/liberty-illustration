@@ -40,10 +40,9 @@ jobs:
   test-e2e:
     name: Run E2E Tests
     timeout-minutes: 60
-    environment: production
     env:
-      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
+      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -66,10 +65,9 @@ jobs:
   test-integration-unit:
     name: Run Integration and Unit Tests
     runs-on: ubuntu-latest
-    environment: development
     env:
-      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
-      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT }}
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_DEVELOPMENT }}
+      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_DEVELOPMENT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
