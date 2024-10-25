@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+env:
+  CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+  CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 jobs:
   check-formatting:
     name: Check Formatting
@@ -37,6 +40,9 @@ jobs:
   test-e2e:
     name: Run E2E Tests
     timeout-minutes: 60
+    env:
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
+      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -59,6 +65,9 @@ jobs:
   test-integration-unit:
     name: Run Integration and Unit Tests
     runs-on: ubuntu-latest
+    env:
+      CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_DEVELOPMENT }}
+      CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_DEVELOPMENT }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

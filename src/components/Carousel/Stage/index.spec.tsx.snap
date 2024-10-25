@@ -9,8 +9,8 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
       class="-translate-x-full duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition w-full"
     >
       <img
-        alt="An imaginary image identified as C and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as C and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -26,8 +26,8 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
       class="-translate-x-full duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition w-full"
     >
       <img
-        alt="An imaginary image identified as A and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as A and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -43,8 +43,8 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
       class="-translate-x-full duration-1000 flex items-center min-w-full px-2 relative right-full transform transition w-full"
     >
       <img
-        alt="An imaginary image identified as B and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as B and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -69,8 +69,8 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
       class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
     >
       <img
-        alt="An imaginary image identified as C and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as C and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -86,8 +86,8 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
       class="flex items-center min-w-full px-2 relative right-full w-full"
     >
       <img
-        alt="An imaginary image identified as A and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as A and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -103,8 +103,8 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
       class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
     >
       <img
-        alt="An imaginary image identified as B and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as B and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -129,8 +129,8 @@ exports[`CarouselStage when transition is previous should match the snapshot 1`]
       class="duration-1000 flex items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
     >
       <img
-        alt="An imaginary image identified as C and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as C and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -146,8 +146,8 @@ exports[`CarouselStage when transition is previous should match the snapshot 1`]
       class="duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition translate-x-full w-full"
     >
       <img
-        alt="An imaginary image identified as A and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as A and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"
@@ -163,8 +163,8 @@ exports[`CarouselStage when transition is previous should match the snapshot 1`]
       class="duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
     >
       <img
-        alt="An imaginary image identified as B and used for testing."
-        class="max-h-full max-w-full mx-auto object-contain"
+        alt="An image identified as B and used for testing."
+        class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
         data-nimg="1"
         decoding="async"
         height="100"

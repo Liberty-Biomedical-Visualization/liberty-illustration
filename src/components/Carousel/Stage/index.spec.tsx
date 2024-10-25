@@ -1,9 +1,9 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/dom";
 
+import { imageA, imageB, imageC } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
-import { imageA, imageB, imageC } from "../test-data";
 import CarouselStage from ".";
 
 describe("CarouselStage", () => {

@@ -1,9 +1,11 @@
 import Image from "next/image";
 
+import type { ImageData } from "@/lib/content";
 import resolveClassNames from "@/lib/resolveClassNames";
 
 export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
-  const { image } = props;
+  const { imageData } = props;
+  const { description, height, src, title, width } = imageData;
 
   const className = resolveClassNames(
     "flex items-center min-w-full px-2 w-full",
@@ -13,12 +15,12 @@ export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
   return (
     <div className={className}>
       <Image
-        alt={image.description}
-        className="max-h-full max-w-full mx-auto object-contain"
-        height={image.height}
-        src={image.src}
-        title={image.title}
-        width={image.width}
+        alt={description ?? ""}
+        className="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
+        height={height}
+        src={src}
+        title={title}
+        width={width}
       />
     </div>
   );
@@ -26,13 +28,5 @@ export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
 
 export interface CarouselSlideProps {
   className?: string;
-  image: ImageData;
-}
-
-interface ImageData {
-  description: string;
-  height: number;
-  src: string;
-  title: string;
-  width: number;
+  imageData: ImageData;
 }
