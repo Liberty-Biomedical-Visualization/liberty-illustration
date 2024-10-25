@@ -3,6 +3,9 @@ on:
   pull_request:
     branches:
       - main
+env:
+  CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+  CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 jobs:
   check-formatting:
     name: Check Formatting
@@ -41,8 +44,6 @@ jobs:
     env:
       CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT }}
-      CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
-      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
@@ -69,8 +70,6 @@ jobs:
     env:
       CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN }}
       CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT }}
-      CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
-      CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
