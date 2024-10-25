@@ -14,6 +14,7 @@ The following environment variables are required to build and test this website:
 
 - `CONTENTFUL_ACCESS_TOKEN`
 - `CONTENTFUL_ENVIRONMENT`
+- `CONTENTFUL_IMAGE_CDN_HOSTNAME`
 - `CONTENTFUL_SPACE_ID`
 
 When possible, environment variables should be access through the

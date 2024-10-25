@@ -3,6 +3,7 @@ import isUndefined from "./isUndefined";
 const environmentVariableNames = [
   "CONTENTFUL_ACCESS_TOKEN",
   "CONTENTFUL_ENVIRONMENT",
+  "CONTENTFUL_IMAGE_CDN_HOSTNAME",
   "CONTENTFUL_SPACE_ID",
 ] as const;
 
