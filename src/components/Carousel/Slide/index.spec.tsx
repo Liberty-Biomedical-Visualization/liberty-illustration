@@ -1,38 +1,29 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/react";
 
+import {
+  completeImage,
+  describedImage,
+  minimalImage,
+} from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
 import CarouselSlide from ".";
 
 describe("CarouselSlide", () => {
-  it("should display image with description as accessible name", () => {
-    const description = "A fancy imaginary image used for testing.";
-    const image = {
-      description,
-      height: 100,
-      src: "https://foo.com/img.jpg",
-      title: "Test Image",
-      width: 100,
-    };
-    renderCarouselSlide({ image });
-
-    const result = screen.getByRole("img", { name: description });
+  it("should display image with description as accessible name when imageData has description", () => {
+    renderCarouselSlide({ imageData: describedImage });
+    const result = screen.getByRole("img", {
+      name: describedImage.description,
+    });
     expect(result).toBeVisible();
   });
 
-  it("should display image with title as accessible description", () => {
-    const title = "Fancy Test Image";
-    const image = {
-      description: "An imaginary image used for testing.",
-      height: 100,
-      src: "https://foo.com/img.jpg",
-      title,
-      width: 100,
-    };
-    renderCarouselSlide({ image });
-
-    const result = screen.getByRole("img", { description: title });
+  it("should display image with title as accessible description when imageData has description and title", () => {
+    renderCarouselSlide({ imageData: completeImage });
+    const result = screen.getByRole("img", {
+      description: completeImage.title,
+    });
     expect(result).toBeVisible();
   });
 
@@ -49,11 +40,5 @@ describe("CarouselSlide", () => {
 });
 
 const renderCarouselSlide = createTestRender(CarouselSlide, {
-  image: {
-    description: "An imaginary image used for testing.",
-    height: 100,
-    src: "https://foo.com/img.jpg",
-    title: "Test Image",
-    width: 100,
-  },
+  imageData: minimalImage,
 });
