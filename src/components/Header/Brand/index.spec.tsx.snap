@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Brand should match the snapshot 1`] = `
+<div>
+  <div>
+    <img
+      alt=""
+      class="max-w-3/4 mx-auto"
+      data-nimg="1"
+      decoding="async"
+      fetchpriority="high"
+      height="100"
+      src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75 2x"
+      style="color: transparent;"
+      width="100"
+    />
+    <h1
+      class="font-light sm:text-3xl text-2xl text-center text-nowrap"
+    >
+      Abigail Richbourg Liberty, MS, CMI 
+      <br />
+      <span
+        class="sm:text-lg text-sm"
+      >
+        Biomedical illustration • Animation • Graphic design
+      </span>
+    </h1>
+  </div>
+</div>
+`;
