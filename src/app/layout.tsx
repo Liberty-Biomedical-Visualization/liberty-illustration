@@ -15,7 +15,11 @@ fontAwesomeConfig.autoAddCss = false;
 
 export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   const { children } = props;
-  const className = resolveClassNames("antialiased", sourceSans.className);
+
+  const className = resolveClassNames(
+    "antialiased flex flex-col items-center min-h-screen p-4",
+    sourceSans.className,
+  );
 
   const siteMetadata = await content.getJsonByTitle("Site Metadata");
   const { author } = siteMetadata;
@@ -29,11 +33,11 @@ export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   return (
     <html lang="en">
       <body className={className}>
-        <Header className="mb-8 mt-4 mx-4" logoData={siteLogoData} />
-        <main className="container mx-auto">{children}</main>
+        <Header className="mb-8" logoData={siteLogoData} />
+        <main className="container mb-8">{children}</main>
         <Footer
           amiLogoData={amiLogoData}
-          className="mb-4 mt-8 mx-4"
+          className="mt-auto"
           cmiLogoData={cmiLogoData}
           copyrightHolder={author}
           copyrightYear={copyrightYear}
