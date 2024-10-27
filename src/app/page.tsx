@@ -3,7 +3,7 @@ import * as content from "@/lib/content";
 
 export default async function Home() {
   const configuration = await content.getJsonByTitle("Home Configuration");
-  const { carouselImageGalleryId } = configuration;
+  const { carouselImageGalleryId, slideDuration } = configuration;
   const imageGallery = await content.getImageGallery(carouselImageGalleryId);
 
   const siteData = await content.getJsonByTitle("Site Metadata");
@@ -15,7 +15,7 @@ export default async function Home() {
     <Carousel
       className="h-64 lg:h-192 sm:h-128 xs:h-72"
       images={describedImages}
-      slideDuration={5_000}
+      slideDuration={slideDuration}
       transitionDuration={1_000}
     />
   );
