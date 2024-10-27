@@ -34,6 +34,8 @@ const config: Config = {
         xs: "480px",
       },
       spacing: {
+        "128": "32rem",
+        "192": "48rem",
         "260": "65rem",
       },
     },
