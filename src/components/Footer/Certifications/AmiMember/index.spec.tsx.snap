@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`AmiMember should match the snapshot 1`] = `
+<div>
+  <img
+    alt="Association of Medical Illustrators member."
+    class="h-12 object-contain w-auto"
+    data-nimg="1"
+    decoding="async"
+    height="100"
+    loading="lazy"
+    src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75"
+    srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75 2x"
+    style="color: transparent;"
+    width="100"
+  />
+</div>
+`;
