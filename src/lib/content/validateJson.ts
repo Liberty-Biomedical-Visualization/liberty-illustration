@@ -31,7 +31,8 @@ export function validateJson(json: Record<string, unknown>, key: JsonTitle) {
         break;
 
       default:
-        throw new Error(`unhandled JSON value type: ${expectedType}`);
+        const unhandledType: never = expectedType;
+        throw new Error(`unhandled JSON value type: ${unhandledType}`);
     }
   }
 
