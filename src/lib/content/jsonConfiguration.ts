@@ -22,6 +22,7 @@ export const jsonConfiguration = {
   "Site Metadata": {
     author: "string",
     description: "string",
+    faviconId: "string",
     keywords: "string[]",
     locale: "string",
     name: "string",
