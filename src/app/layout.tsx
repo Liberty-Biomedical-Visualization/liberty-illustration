@@ -1,16 +1,17 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Source_Sans_3 as SourceSans3 } from "next/font/google";
+
+import resolveClassNames from "@/lib/resolveClassNames";
 
 import "./globals.css";
 
 export default function RootLayout(props: Readonly<RootLayoutProps>) {
+  const { children } = props;
+  const className = resolveClassNames("antialiased", sourceSans.className);
+
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
-        {props.children}
-      </body>
+      <body className={className}>{children}</body>
     </html>
   );
 }
@@ -24,14 +25,4 @@ interface RootLayoutProps {
   children: React.ReactNode;
 }
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+const sourceSans = SourceSans3({ subsets: ["latin"] });
