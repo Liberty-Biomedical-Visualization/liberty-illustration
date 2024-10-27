@@ -12,7 +12,9 @@ export default function RootLayout(props: Readonly<RootLayoutProps>) {
 
   return (
     <html lang="en">
-      <body className={className}>{children}</body>
+      <body className={className}>
+        <main className="container mx-auto">{children}</main>
+      </body>
     </html>
   );
 }
