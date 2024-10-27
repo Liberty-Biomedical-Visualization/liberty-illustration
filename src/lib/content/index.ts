@@ -7,13 +7,29 @@ import { Json, JsonTitle } from "./jsonConfiguration";
 import { validateJson } from "./validateJson";
 
 /**
+ * Gets `AssetData` by ID.
+ *
+ * Throws an `Error` if the asset is not found.
+ */
+export async function getAssetData(id: string) {
+  const asset = await client.getAsset(id);
+  return mapContentfulAssetToAssetData(asset);
+}
+
+export interface AssetData {
+  description?: string;
+  title?: string;
+  url: string;
+}
+
+/**
  * Gets `ImageData` by ID.
  *
  * Throws an `Error` if the image is not found, or the asset is not an image.
  */
 export async function getImageData(id: string) {
   const asset = await client.getAsset(id);
-  return mapAssetToImage(asset);
+  return mapContentfulAssetToImageData(asset);
 }
 
 export interface ImageData {
@@ -59,8 +75,28 @@ export async function getJsonByTitle<K extends JsonTitle>(title: K) {
   return json.fields.value;
 }
 
-function mapAssetToImage(asset: ImageAsset) {
+function mapContentfulAssetToAssetData(asset: ContentfulAsset) {
   const { description, file, title } = asset.fields;
+
+  if (file === undefined) {
+    throw new Error("file is undefined");
+  }
+
+  const assetData: AssetData = { url: "https:" + file.url };
+
+  if (description) {
+    assetData.description = description;
+  }
+
+  if (title) {
+    assetData.title = title;
+  }
+
+  return assetData;
+}
+
+function mapContentfulAssetToImageData(asset: ContentfulAsset) {
+  const { file } = asset.fields;
 
   if (file === undefined) {
     throw new Error("file is undefined");
@@ -73,7 +109,8 @@ function mapAssetToImage(asset: ImageAsset) {
   }
 
   const { height, width } = image;
-  const imageData: ImageData = { height, src: "https:" + file.url, width };
+  const { description, title, url } = mapContentfulAssetToAssetData(asset);
+  const imageData: ImageData = { height, src: url, width };
 
   if (description) {
     imageData.description = description;
@@ -86,11 +123,13 @@ function mapAssetToImage(asset: ImageAsset) {
   return imageData;
 }
 
-type ImageAsset = contentful.Asset<"WITHOUT_UNRESOLVABLE_LINKS", string>;
+type ContentfulAsset = contentful.Asset<"WITHOUT_UNRESOLVABLE_LINKS", string>;
 
 function mapEntryToImageGallery(entry: ImageGalleryEntry) {
   const { images, title } = entry.fields;
-  const mappedImages = images.filter(isDefined).map(mapAssetToImage);
+  const mappedImages = images
+    .filter(isDefined)
+    .map(mapContentfulAssetToImageData);
   const gallery: ImageGallery = { images: mappedImages, title };
   return gallery;
 }
