@@ -13,9 +13,10 @@ export function validateJson(json: Record<string, unknown>, key: JsonTitle) {
     const valueType = typeof value;
 
     switch (expectedType) {
+      case "number":
       case "string":
-        if (valueType !== "string") {
-          errors.push(`${key} must be a string`);
+        if (valueType !== expectedType) {
+          errors.push(`${key} must be a ${expectedType}`);
         }
 
         break;
@@ -31,7 +32,8 @@ export function validateJson(json: Record<string, unknown>, key: JsonTitle) {
         break;
 
       default:
-        throw new Error(`unhandled JSON value type: ${expectedType}`);
+        const unhandledType: never = expectedType;
+        throw new Error(`unhandled JSON value type: ${unhandledType}`);
     }
   }
 

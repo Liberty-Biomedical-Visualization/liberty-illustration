@@ -1,9 +1,27 @@
 import { describe, expect, it } from "@jest/globals";
 
+import { integrationTestAsset } from "./test-asset-data";
 import { integrationTestImage } from "./test-image-data";
 import * as content from ".";
 
 describe("content", () => {
+  describe("getAssetData", () => {
+    it("should resolve to asset data", async () => {
+      /**
+       * `Asset` titled "Integration Test PDF".
+       */
+      const id = "1eKUknoC6JiemY6AWJ9cz9";
+      const result = content.getAssetData(id);
+      await expect(result).resolves.toEqual(integrationTestAsset);
+    });
+
+    it("should reject when the asset is not found", async () => {
+      const id = "n0t4r3a1iD";
+      const result = content.getAssetData(id);
+      await expect(result).rejects.toBeInstanceOf(Error);
+    });
+  });
+
   describe("getImageData", () => {
     it("should resolve to image data", async () => {
       /**
