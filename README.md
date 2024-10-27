@@ -13,6 +13,7 @@ linting, testing, and other quality control processes on pull requests to the
 The following environment variables are required to build and test this website:
 
 - `CONTENTFUL_ACCESS_TOKEN`
+- `CONTENTFUL_ASSET_CDN_HOSTNAME`
 - `CONTENTFUL_ENVIRONMENT`
 - `CONTENTFUL_IMAGE_CDN_HOSTNAME`
 - `CONTENTFUL_SPACE_ID`
