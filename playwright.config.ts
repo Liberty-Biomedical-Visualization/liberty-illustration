@@ -35,7 +35,8 @@ const config: PlaywrightTestConfig = {
   ],
   reporter: "html",
   retries: process.env.CI ? 2 : 0,
-  testDir: "./tests",
+  testDir: "./src/app",
+  testMatch: "**/*.spec.ts",
   use: {
     baseURL: "http://localhost:3000",
     trace: "on-first-retry",
