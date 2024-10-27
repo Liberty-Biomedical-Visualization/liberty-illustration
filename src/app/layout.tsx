@@ -2,17 +2,24 @@ import type { Metadata } from "next";
 import { Source_Sans_3 as SourceSans3 } from "next/font/google";
 import type { ReactNode } from "react";
 
+import Header from "@/components/Header";
+import * as content from "@/lib/content";
 import resolveClassNames from "@/lib/resolveClassNames";
 
 import "./globals.css";
 
-export default function RootLayout(props: Readonly<RootLayoutProps>) {
+export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   const { children } = props;
   const className = resolveClassNames("antialiased", sourceSans.className);
+
+  const siteConfiguration = await content.getJsonByTitle("Site Configuration");
+  const { siteLogoId } = siteConfiguration;
+  const siteLogoData = await content.getImageData(siteLogoId);
 
   return (
     <html lang="en">
       <body className={className}>
+        <Header className="mb-8 mt-4 mx-4" logoData={siteLogoData} />
         <main className="container mx-auto">{children}</main>
       </body>
     </html>
