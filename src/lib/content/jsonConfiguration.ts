@@ -4,6 +4,7 @@
 export const jsonConfiguration = {
   "Home Configuration": {
     carouselImageGalleryId: "string",
+    slideDuration: "number",
   },
   "Integration Test JSON": {
     foo: "string",

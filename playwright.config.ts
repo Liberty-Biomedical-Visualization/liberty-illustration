@@ -9,21 +9,34 @@ const config: PlaywrightTestConfig = {
   fullyParallel: true,
   projects: [
     {
-      name: "chromium",
+      name: "chrome",
       use: { ...devices["Desktop Chrome"] },
+    },
+    {
+      name: "edge",
+      use: { ...devices["Desktop Edge"] },
     },
     {
       name: "firefox",
       use: { ...devices["Desktop Firefox"] },
     },
     {
-      name: "webkit",
+      name: "galaxy",
+      use: { ...devices["Galaxy S8"] },
+    },
+    {
+      name: "iphone",
+      use: { ...devices["iPhone 15"] },
+    },
+    {
+      name: "safari",
       use: { ...devices["Desktop Safari"] },
     },
   ],
   reporter: "html",
   retries: process.env.CI ? 2 : 0,
-  testDir: "./tests",
+  testDir: "./src/app",
+  testMatch: "**/*.spec.ts",
   use: {
     baseURL: "http://localhost:3000",
     trace: "on-first-retry",

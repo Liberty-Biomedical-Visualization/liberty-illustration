@@ -30,7 +30,12 @@ const config: Config = {
         "1/2": "50%",
         "3/4": "75%",
       },
+      screen: {
+        xs: "480px",
+      },
       spacing: {
+        "128": "32rem",
+        "192": "48rem",
         "260": "65rem",
       },
     },

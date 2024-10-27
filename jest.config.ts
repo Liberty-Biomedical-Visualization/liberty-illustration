@@ -6,6 +6,7 @@ const config: Config = {
   collectCoverageFrom: [
     "<rootDir>/src/**/!(*.spec|*.test).ts?(x)",
     "!<rootDir>/src/app/**",
+    "!<rootDir>/src/page-object-models/**",
   ],
   coverageDirectory: "coverage",
   coverageProvider: "v8",

@@ -78,6 +78,9 @@ $ npm run test
 
 #### E2E tests
 
+E2E tests contain a `.spec` segment before the `.ts` file extension. They are
+co-located with the pages that they test.
+
 E2E testing is performed against the production build of the project, so the
 project needs to be built before running E2E testing scripts.
 
@@ -102,6 +105,7 @@ $ npm run test:e2e:codegen
 #### Integration tests
 
 Integration tests contain a `.test` segment before the `.ts` file extension.
+They are co-located with the modules they test.
 
 To run integration tests:
 
@@ -112,6 +116,7 @@ $ npm run test:integration
 #### Unit tests
 
 Unit tests contain a `.spec` segment before the `.ts` or `.tsx` file extension.
+They are co-located with the modules they test.
 
 To run unit tests:
 
