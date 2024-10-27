@@ -1,7 +1,7 @@
 import resolveClassNames from "@/lib/resolveClassNames";
 
 import Certifications, { type CertificationsProps } from "./Certifications";
-import Copyright from "./Copyright";
+import Copyright, { type CopyrightProps } from "./Copyright";
 
 export default function Footer(props: Readonly<FooterProps>) {
   const {
@@ -33,7 +33,7 @@ export interface FooterProps {
   amiLogoData: CertificationsProps["amiLogoData"];
   className?: string;
   cmiLogoData: CertificationsProps["cmiLogoData"];
-  copyrightHolder: string;
-  copyrightYear: number;
-  currentYear: number;
+  copyrightHolder: CopyrightProps["holder"];
+  copyrightYear: CopyrightProps["initialYear"];
+  currentYear: CopyrightProps["currentYear"];
 }
