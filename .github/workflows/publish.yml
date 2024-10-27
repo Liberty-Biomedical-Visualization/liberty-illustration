@@ -1,13 +1,7 @@
-name: Deployment
+name: Publish
 on:
-  release:
-    types: [released]
-  workflow_dispatch:
-    inputs:
-      ref:
-        description: Ref to be deployed
-        required: true
-        type: string
+  repository_dispatch:
+    types: [publish]
 env:
   CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
   CONTENTFUL_ASSET_CDN_HOSTNAME: ${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
@@ -22,30 +16,26 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+      - name: Get Last Successful Deployment SHA
+        id: get-last-successful-deployment-sha
+        uses: actions/github-script@v6
         with:
-          ref: ${{ github.event.inputs.ref || github.ref }}
+          script: |
+            const script = require('./.github/scripts/get-last-successful-deployment-sha.js');
+            await script({context, core, github});
+        env:
+          ENVIRONMENT: production
+      - name: Checkout Ref
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ steps.get-last-successful-deployment-sha.outputs.result }}
       - name: Setup
         uses: ./.github/actions/setup
-      - name: Run Unit and Integration Tests
-        run: npm run test
-      - name: Deploy Staging
-        id: deploy-staging
-        uses: amondnet/vercel-action@v25
-        with:
-          scope: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-      - name: Run E2E Tests
-        run: npm run test:e2e:run
-        env:
-          E2E_BASE_URL: ${{ steps.deploy-staging.outputs.preview-url }}
-          E2E_DEPLOYMENT: true
       - name: Deploy Production
         uses: amondnet/vercel-action@v25
         with:
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: --prebuilt --prod
+          vercel-args: --prod
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
