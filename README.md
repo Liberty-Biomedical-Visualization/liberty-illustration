@@ -18,9 +18,14 @@ The following environment variables are required to build and test this website:
 - `CONTENTFUL_IMAGE_CDN_HOSTNAME`
 - `CONTENTFUL_SPACE_ID`
 
-When possible, environment variables should be access through the
+When possible, these environment variables should be accessed through the
 `src/lib/config.ts` module. This module validates that the environment is
 complete and will fail fast should a value be undefined.
+
+The following environment variables are optional:
+
+- `E2E_BASE_URL`
+- `E2E_DEPLOYMENT`
 
 ## Scripts
 

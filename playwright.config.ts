@@ -38,13 +38,13 @@ const config: PlaywrightTestConfig = {
   testDir: "./src/app",
   testMatch: "**/*.spec.ts",
   use: {
-    baseURL: "http://localhost:3000",
+    baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
     trace: "on-first-retry",
   },
   webServer: {
     command: "npm run start",
-    reuseExistingServer: !process.env.CI,
-    url: "http://localhost:3000",
+    reuseExistingServer: !process.env.CI || !!process.env.E2E_DEPLOYMENT,
+    url: process.env.E2E_BASE_URL ?? "http://localhost:3000",
   },
 };
 
