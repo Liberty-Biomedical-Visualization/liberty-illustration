@@ -50,10 +50,12 @@ export interface RootLayoutProps {
 
 export async function generateMetadata() {
   const siteMetadata = await content.getJsonByTitle("Site Metadata");
-  const { author, description, keywords, locale, name, url } = siteMetadata;
+  const { author, description, faviconId, keywords, locale, name, url } =
+    siteMetadata;
   const title = { default: name, template: `%s | ${name}` };
 
   const siteConfiguration = await content.getJsonByTitle("Site Configuration");
+  const faviconData = await content.getAssetData(faviconId);
   const logoData = await content.getImageData(siteConfiguration.siteLogoId);
   const image = {
     alt: logoData.description ?? `${name} logo.`,
@@ -69,6 +71,7 @@ export async function generateMetadata() {
     description,
     generator: "Next.js",
     keywords,
+    icons: faviconData.url,
     openGraph: {
       description,
       images: image,
