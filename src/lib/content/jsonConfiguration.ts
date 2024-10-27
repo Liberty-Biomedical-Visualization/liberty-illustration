@@ -16,6 +16,7 @@ export const jsonConfiguration = {
   "Site Configuration": {
     amiLogoId: "string",
     cmiLogoId: "string",
+    copyrightYear: "number",
     siteLogoId: "string",
   },
   "Site Metadata": {
@@ -46,6 +47,7 @@ type StringLiteralAsType<T> = T extends ConfigurableType
 type ConfigurableType = keyof ConfigurableTypeMap;
 
 type ConfigurableTypeMap = {
+  number: number;
   string: string;
   "string[]": string[];
 };

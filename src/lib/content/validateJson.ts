@@ -13,9 +13,10 @@ export function validateJson(json: Record<string, unknown>, key: JsonTitle) {
     const valueType = typeof value;
 
     switch (expectedType) {
+      case "number":
       case "string":
-        if (valueType !== "string") {
-          errors.push(`${key} must be a string`);
+        if (valueType !== expectedType) {
+          errors.push(`${key} must be a ${expectedType}`);
         }
 
         break;
