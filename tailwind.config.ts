@@ -30,6 +30,9 @@ const config: Config = {
         "1/2": "50%",
         "3/4": "75%",
       },
+      spacing: {
+        "260": "65rem",
+      },
     },
   },
   plugins: [],
