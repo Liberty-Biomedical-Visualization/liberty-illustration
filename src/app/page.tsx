@@ -13,7 +13,7 @@ export default async function Home() {
 
   return (
     <Carousel
-      className="h-64 lg:h-192 mx-4 sm:h-128 xs:h-72"
+      className="h-64 lg:h-192 sm:h-128 xs:h-72"
       images={describedImages}
       slideDuration={5_000}
       transitionDuration={1_000}
