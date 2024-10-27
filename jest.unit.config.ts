@@ -8,6 +8,7 @@ const config: Config.InitialProjectOptions = {
   snapshotResolver: "<rootDir>/jest/snapshot-resolver.ts",
   testEnvironment: "node",
   testMatch: ["<rootDir>/src/**/*.spec.ts"],
+  testPathIgnorePatterns: ["<rootDir>/src/app/"],
 };
 
 const createJestConfig = nextJest({ dir: "./" });
