@@ -6,12 +6,23 @@ export default async function Home() {
   const { carouselImageGalleryId } = configuration;
   const imageGallery = await content.getImageGallery(carouselImageGalleryId);
 
+  const siteData = await content.getJsonByTitle("Site Metadata");
+  const describedImages = imageGallery.images.map((image) =>
+    describeImage(image, siteData.author),
+  );
+
   return (
     <Carousel
       className="h-64 lg:h-192 mx-4 sm:h-128 xs:h-72"
-      images={imageGallery.images}
+      images={describedImages}
       slideDuration={5_000}
       transitionDuration={1_000}
     />
   );
+}
+
+function describeImage(image: content.ImageData, author: string) {
+  const describedImage = { ...image };
+  describedImage.description ??= `An illustration by ${author}.`;
+  return describedImage;
 }
