@@ -1,3 +1,5 @@
+import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
+import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
 import { Source_Sans_3 as SourceSans3 } from "next/font/google";
 import type { ReactNode } from "react";
@@ -8,6 +10,8 @@ import * as content from "@/lib/content";
 import resolveClassNames from "@/lib/resolveClassNames";
 
 import "./globals.css";
+
+fontAwesomeConfig.autoAddCss = false;
 
 export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   const { children } = props;
