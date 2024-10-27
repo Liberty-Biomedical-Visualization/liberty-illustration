@@ -1,5 +1,7 @@
 name: Deployment
 on:
+  release:
+    types: [released]
   workflow_dispatch:
     inputs:
       ref:
