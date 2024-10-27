@@ -81,7 +81,8 @@ test.describe("Home", () => {
     await expect(homePage.nextImageButton).toBeDisabled();
     await expect(homePage.previousImageButton).toBeDisabled();
 
-    // Buttons enable after the transition completes.
+    // Transition completes after a period of time.
+
     await expect(homePage.nextImageButton).toBeEnabled();
     await expect(homePage.previousImageButton).toBeEnabled();
   });
