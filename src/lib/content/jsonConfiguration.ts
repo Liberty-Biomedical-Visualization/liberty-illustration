@@ -39,10 +39,13 @@ type StringLiteralPropertiesAsTypes<T extends JsonConfiguration[JsonTitle]> = {
   [K in keyof T]: StringLiteralAsType<T[K]>;
 };
 
-// Prettier will mangle the ternary expressions in this type and make it
-// difficult to understand.
-// prettier-ignore
-type StringLiteralAsType<T> = 
-  T extends "string" ? string :
-  T extends "string[]" ? string[] :
-  never;
+type StringLiteralAsType<T> = T extends ConfigurableType
+  ? ConfigurableTypeMap[T]
+  : never;
+
+type ConfigurableType = keyof ConfigurableTypeMap;
+
+type ConfigurableTypeMap = {
+  string: string;
+  "string[]": string[];
+};
