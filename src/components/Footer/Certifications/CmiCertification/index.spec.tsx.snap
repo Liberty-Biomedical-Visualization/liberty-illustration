@@ -1,0 +1,39 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`CmiCertification should match the snapshot 1`] = `
+<div>
+  <div
+    class="flex items-center"
+  >
+    <img
+      alt="CMI, Board of Certification of Medical Illustrators."
+      class="h-12 object-contain w-auto"
+      data-nimg="1"
+      decoding="async"
+      height="48"
+      loading="lazy"
+      src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=96&q=75"
+      srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=48&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=96&q=75 2x"
+      style="color: transparent;"
+      width="48"
+    />
+    <p
+      class="flex-shrink-0 leading-none ml-1"
+    >
+      <span
+        class="font-bold text-nowrap uppercase"
+      >
+        Board Certified 
+        <br />
+        Medical Illustrator
+      </span>
+      <br />
+      <span
+        class="leading-none text-nowrap text-xs"
+      >
+        by the Board of Certification of Medical Illustrators
+      </span>
+    </p>
+  </div>
+</div>
+`;
