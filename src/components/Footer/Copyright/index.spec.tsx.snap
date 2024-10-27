@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Copyright should match the snapshot 1`] = `
+<div>
+  <small>
+    © 2023–2024 John Doe. All rights reserved.
+  </small>
+</div>
+`;
