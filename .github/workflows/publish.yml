@@ -24,6 +24,8 @@ jobs:
             return result;
         # env:
         #   ENVIRONMENT: production
+      - name: Log output
+        run: echo ${{ steps.get-last-successful-deployment-sha.outputs.result }}
       - name: Checkout Ref
         uses: actions/checkout@v4
         with:
