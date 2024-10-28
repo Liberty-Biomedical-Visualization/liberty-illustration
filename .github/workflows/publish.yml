@@ -2,6 +2,8 @@ name: Publish
 on:
   repository_dispatch:
     types: [publish]
+concurrency:
+  group: ${{ github.workflow }}
 jobs:
   deploy:
     name: Deploy
