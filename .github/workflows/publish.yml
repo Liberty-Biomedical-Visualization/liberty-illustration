@@ -25,7 +25,7 @@ jobs:
       - name: Checkout Ref
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.get-last-successful-deployment-sha.outputs.result }}
+          ref: "v1.0.3"
       - name: Setup
         uses: ./.github/actions/setup
       # - name: Deploy Production
