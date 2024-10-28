@@ -10,6 +10,7 @@ on:
         type: string
 concurrency:
   group: deployment
+  cancel-in-progress: true
 env:
   CONTENTFUL_ASSET_CDN_HOSTNAME: ${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
   CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
