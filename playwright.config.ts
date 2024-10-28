@@ -39,10 +39,6 @@ const config: PlaywrightTestConfig = {
   testMatch: "**/*.spec.ts",
   use: {
     baseURL: process.env.E2E_BASE_URL ?? "http://localhost:3000",
-    extraHTTPHeaders: {
-      "x-vercel-protection-bypass":
-        process.env.VERCEL_AUTOMATION_BYPASS_SECRET ?? "",
-    },
     trace: "on-first-retry",
   },
   webServer: {
