@@ -19,7 +19,9 @@ jobs:
         with:
           script: |
             const script = require('./.github/scripts/get-latest-release-tag.js');
-            return await script({context, core, github});
+            const result = await script({context, core, github});
+            console.log(result);
+            return result;
         # env:
         #   ENVIRONMENT: production
       - name: Checkout Ref
