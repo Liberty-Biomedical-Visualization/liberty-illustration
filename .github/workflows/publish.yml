@@ -2,47 +2,40 @@ name: Publish
 on:
   repository_dispatch:
     types: [publish]
-  workflow_dispatch:
 concurrency:
   group: deployment
 jobs:
   deploy:
     name: Deploy
     runs-on: ubuntu-latest
-    # environment: production
+    environment: production
     steps:
       - name: Checkout
         uses: actions/checkout@v4
-      - name: Get Last Successful Deployment SHA
-        id: get-last-successful-deployment-sha
+      - name: Get Latest Release Tag
+        id: get-latest-release-tag
         uses: actions/github-script@v6
         with:
           script: |
             const script = require('./.github/scripts/get-latest-release-tag.js');
-            const result = await script({context, core, github});
-            console.log(result);
-            return result;
-        # env:
-        #   ENVIRONMENT: production
-      - name: Log output
-        run: echo ${{ steps.get-last-successful-deployment-sha.outputs.result }}
-      - name: Checkout Ref
+            return await script({context, core, github});
+      - name: Checkout Tag
         uses: actions/checkout@v4
         with:
-          ref: ${{ fromJson(steps.get-last-successful-deployment-sha.outputs.result) }}
+          ref: ${{ fromJson(steps.get-latest-release-tag.outputs.result) }}
       - name: Setup
         uses: ./.github/actions/setup
-      # - name: Deploy Production
-      #   uses: amondnet/vercel-action@v25
-      #   with:
-      #     scope: ${{ secrets.VERCEL_ORG_ID }}
-      #     vercel-args: |
-      #       --prod
-      #       -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
-      #       -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
-      #       -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
-      #       -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
-      #       -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
-      #     vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-      #     vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
-      #     vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      - name: Deploy Production
+        uses: amondnet/vercel-action@v25
+        with:
+          scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: |
+            --prod
+            -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
+            -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
+            -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
+            -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+            -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
+          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
+          vercel-token: ${{ secrets.VERCEL_TOKEN }}
