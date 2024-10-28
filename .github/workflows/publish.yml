@@ -29,7 +29,7 @@ jobs:
       - name: Checkout Ref
         uses: actions/checkout@v4
         with:
-          ref: ${{ steps.get-last-successful-deployment-sha.outputs.result }}
+          ref: ${{ fromJson(steps.get-last-successful-deployment-sha.outputs.result) }}
       - name: Setup
         uses: ./.github/actions/setup
       # - name: Deploy Production
