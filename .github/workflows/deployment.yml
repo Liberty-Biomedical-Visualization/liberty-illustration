@@ -34,12 +34,15 @@ jobs:
         uses: amondnet/vercel-action@v25
         with:
           scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: |
+            -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
+            -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
+            -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
+            -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+            -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
-        env:
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
-          CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
       - name: Run E2E Tests
         run: npm run test:e2e:run
         env:
