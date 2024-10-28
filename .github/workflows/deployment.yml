@@ -9,9 +9,7 @@ on:
         required: true
         type: string
 env:
-  CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
   CONTENTFUL_ASSET_CDN_HOSTNAME: ${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
-  CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
   CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
   CONTENTFUL_SPACE_ID: ${{ secrets.CONTENTFUL_SPACE_ID }}
 jobs:
@@ -28,24 +26,48 @@ jobs:
         uses: ./.github/actions/setup
       - name: Run Unit and Integration Tests
         run: npm run test
+        env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_DEVELOPMENT }}
+          CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_DEVELOPMENT }}
       - name: Deploy Staging
         id: deploy-staging
         uses: amondnet/vercel-action@v25
         with:
           scope: ${{ secrets.VERCEL_ORG_ID }}
+          vercel-args: |
+            -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
+            -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
+            -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
+            -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+            -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
+      - name: Install Playwright Browsers
+        run: npm run test:e2e:install
       - name: Run E2E Tests
         run: npm run test:e2e:run
         env:
           E2E_BASE_URL: ${{ steps.deploy-staging.outputs.preview-url }}
           E2E_DEPLOYMENT: true
+      - name: Upload E2E Report
+        uses: actions/upload-artifact@v4
+        if: ${{ !cancelled() }}
+        with:
+          name: playwright-report
+          path: playwright-report/
+          retention-days: 30
       - name: Deploy Production
         uses: amondnet/vercel-action@v25
         with:
           scope: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: --prebuilt --prod
+          vercel-args: |
+            --prod
+            -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
+            -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
+            -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
+            -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
+            -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
           vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
           vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
           vercel-token: ${{ secrets.VERCEL_TOKEN }}
