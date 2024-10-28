@@ -18,7 +18,7 @@ jobs:
         with:
           script: |
             const script = require('./.github/scripts/get-last-successful-deployment-sha.js');
-            await script({context, core, github});
+            return await script({context, core, github});
         env:
           ENVIRONMENT: production
       - name: Checkout Ref
