@@ -17,7 +17,7 @@ jobs:
         uses: actions/github-script@v6
         with:
           script: |
-            const script = require('./.github/scripts/get-last-successful-deployment-sha.js');
+            const script = require('./.github/scripts/get-latest-release-tag.js');
             return await script({context, core, github});
         env:
           ENVIRONMENT: production
