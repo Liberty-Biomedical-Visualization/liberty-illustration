@@ -1,5 +1,5 @@
 module.exports = async ({ github, context }) => {
-  const deployments = await github.repos.listDeployments({
+  const deployments = await github.rest.repos.listDeployments({
     environment: process.env.ENVIRONMENT,
     owner: context.repo.owner,
     repo: context.repo.repo,
