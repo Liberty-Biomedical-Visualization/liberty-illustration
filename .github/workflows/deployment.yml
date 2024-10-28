@@ -9,8 +9,7 @@ on:
         required: true
         type: string
 concurrency:
-  cancel-in-progress: true
-  group: ${{ github.workflow }}
+  group: deployment
 env:
   CONTENTFUL_ASSET_CDN_HOSTNAME: ${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
   CONTENTFUL_IMAGE_CDN_HOSTNAME: ${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}

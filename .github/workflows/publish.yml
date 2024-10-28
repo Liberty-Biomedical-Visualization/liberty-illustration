@@ -3,7 +3,7 @@ on:
   repository_dispatch:
     types: [publish]
 concurrency:
-  group: ${{ github.workflow }}
+  group: deployment
 jobs:
   deploy:
     name: Deploy
