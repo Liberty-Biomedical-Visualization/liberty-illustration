@@ -5,7 +5,9 @@ exports[`Header should match the snapshot 1`] = `
   <header
     class="flex flex-col items-center"
   >
-    <div>
+    <div
+      class="mb-4"
+    >
       <img
         alt=""
         class="max-w-3/4 mx-auto"
@@ -30,6 +32,13 @@ exports[`Header should match the snapshot 1`] = `
         </span>
       </h1>
     </div>
+    <nav
+      class="flex flex-nowrap flex-row"
+    >
+      <ul
+        class="flex flex-nowrap flex-row"
+      />
+    </nav>
   </header>
 </div>
 `;

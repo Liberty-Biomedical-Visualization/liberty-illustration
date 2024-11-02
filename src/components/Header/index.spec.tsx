@@ -21,6 +21,28 @@ describe("Header", () => {
     expect(result).toBeVisible();
   });
 
+  it("should display a list of links from passed pages", () => {
+    const pages = [
+      { href: "/", name: "Home" },
+      { href: "/portfolio", name: "Portfolio" },
+    ];
+    renderHeader({ pages });
+
+    const listItems = screen.getAllByRole("listitem");
+
+    const homeLink = screen.getByRole("link", { name: "Home" });
+    const containsHomeLink = listItems.some((listItem) =>
+      listItem.contains(homeLink),
+    );
+    expect(containsHomeLink).toBe(true);
+
+    const portfolioLink = screen.getByRole("link", { name: "Portfolio" });
+    const containsPortfolioLink = listItems.some((listItem) =>
+      listItem.contains(portfolioLink),
+    );
+    expect(containsPortfolioLink).toBe(true);
+  });
+
   it("should pass className to the outermost element", () => {
     const className = "foo";
     const result = renderHeader({ className });
@@ -35,4 +57,5 @@ describe("Header", () => {
 
 const renderHeader = createTestRender(Header, {
   logoData: minimalImage,
+  pages: [],
 });

@@ -1,3 +1,5 @@
+import path from "path";
+
 import { config as fontAwesomeConfig } from "@fortawesome/fontawesome-svg-core";
 import "@fortawesome/fontawesome-svg-core/styles.css";
 import type { Metadata } from "next";
@@ -5,8 +7,12 @@ import { Source_Sans_3 as SourceSans3 } from "next/font/google";
 import type { ReactNode } from "react";
 
 import Footer from "@/components/Footer";
-import Header from "@/components/Header";
+import Header, { type HeaderProps } from "@/components/Header";
+import type { Mutable } from "@/lib/Mutable";
+import * as array from "@/lib/array";
 import * as content from "@/lib/content";
+import getPagePaths from "@/lib/getPagePaths";
+import isInRootDir from "@/lib/isInRootDir";
 import resolveClassNames from "@/lib/resolveClassNames";
 
 import "./globals.css";
@@ -25,15 +31,21 @@ export default async function RootLayout(props: Readonly<RootLayoutProps>) {
   const { author } = siteMetadata;
 
   const siteConfiguration = await content.getJsonByTitle("Site Configuration");
-  const { amiLogoId, cmiLogoId, copyrightYear, siteLogoId } = siteConfiguration;
+  const { amiLogoId, cmiLogoId, copyrightYear, navPageOrder, siteLogoId } =
+    siteConfiguration;
   const amiLogoData = await content.getImageData(amiLogoId);
   const cmiLogoData = await content.getImageData(cmiLogoId);
   const siteLogoData = await content.getImageData(siteLogoId);
 
+  const pages = getPages();
+  navPageOrder.forEach((pageName, index) =>
+    movePageToIndex(pages, pageName, index),
+  );
+
   return (
     <html lang="en">
       <body className={className}>
-        <Header className="mb-8" logoData={siteLogoData} />
+        <Header className="mb-8" logoData={siteLogoData} pages={pages} />
         <main className="container mb-8">{children}</main>
         <Footer
           amiLogoData={amiLogoData}
@@ -97,6 +109,45 @@ export async function generateMetadata() {
   };
 
   return metadata;
+}
+
+function getPages() {
+  const pagePaths = getPagePaths("./src/app").filter(isInRootDir);
+  return pagePaths.map(transformToPage);
+}
+
+function transformToPage(pagePath: string) {
+  const page: HeaderProps["pages"][number] = {
+    href: pagePath,
+    name: transformToPageName(pagePath),
+  };
+
+  return page;
+}
+
+function transformToPageName(pagePath: string) {
+  if (pagePath === "/") {
+    return "Home";
+  }
+
+  const basename = path.basename(pagePath);
+  return basename.slice(0, 1).toUpperCase() + basename.slice(1);
+}
+
+function movePageToIndex(
+  pages: Mutable<HeaderProps["pages"]>,
+  pageName: string,
+  targetIndex: number,
+) {
+  const currentIndex = pages.findIndex(
+    (page) => page.name.toLowerCase() === pageName.toLocaleLowerCase(),
+  );
+
+  if (currentIndex === -1) {
+    throw new Error(`page "${pageName}" not found`);
+  }
+
+  array.swap(pages, targetIndex, currentIndex);
 }
 
 const currentYear = new Date().getFullYear();
