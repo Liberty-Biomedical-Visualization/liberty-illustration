@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavItem should match the snapshot 1`] = `
+<div>
+  <a
+    class="active:text-accent-400 hover:text-accent-600 text-accent-800 text-lg transition uppercase"
+    href="/"
+  >
+    Home
+  </a>
+</div>
+`;
