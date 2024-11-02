@@ -1,3 +1,5 @@
+import isUndefined from "../isUndefined";
+
 /**
  * Returns the value of calling `Array.at` for the given index of array.
  *
@@ -6,7 +8,7 @@
 export default function atChecked<T>(array: readonly T[], index: number) {
   const value = array.at(index);
 
-  if (value === undefined) {
+  if (isUndefined(value)) {
     throw new RangeError(`${index} is out of bounds`);
   }
 
