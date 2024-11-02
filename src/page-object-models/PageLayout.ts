@@ -28,4 +28,6 @@ export default class PageLayout extends PageObjectModel {
   readonly siteLogo = this.page.getByRole("img", {
     name: "Liberty Biomedical",
   });
+
+  protected content = this.page.getByRole("main");
 }
