@@ -83,7 +83,7 @@ export async function generateMetadata() {
   const metadata: Metadata = {
     appleWebApp: { title: name, statusBarStyle: "default" },
     applicationName: name,
-    authors: { name: author, url: url },
+    authors: { name: author, url },
     description,
     generator: "Next.js",
     keywords,
