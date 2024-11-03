@@ -25,7 +25,7 @@ export default function CmiCertification(
       <p className="flex-shrink-0 leading-none ml-1">
         <span className="font-bold text-nowrap uppercase">
           Board Certified <br />
-          Medical Illustrator
+          Medical Illustrator{" "}
         </span>
         <br />
         <span className="leading-none text-nowrap text-xs">

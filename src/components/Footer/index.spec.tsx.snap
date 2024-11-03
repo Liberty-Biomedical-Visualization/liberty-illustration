@@ -33,6 +33,7 @@ exports[`Footer should match the snapshot 1`] = `
               Board Certified 
               <br />
               Medical Illustrator
+               
             </span>
             <br />
             <span
@@ -58,7 +59,9 @@ exports[`Footer should match the snapshot 1`] = `
         />
       </li>
     </ul>
-    <small>
+    <small
+      class="text-nowrap"
+    >
       © 2014–2024 Abigail Richbourg Liberty. All rights reserved.
     </small>
   </footer>

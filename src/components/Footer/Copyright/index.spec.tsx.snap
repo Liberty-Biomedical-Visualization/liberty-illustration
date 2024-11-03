@@ -2,7 +2,9 @@
 
 exports[`Copyright should match the snapshot 1`] = `
 <div>
-  <small>
+  <small
+    class="text-nowrap"
+  >
     © 2023–2024 John Doe. All rights reserved.
   </small>
 </div>

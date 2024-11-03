@@ -31,10 +31,7 @@ function transformToNavItem(page: Readonly<PageNavData>, isLastPage: boolean) {
 
   const className = isLastPage
     ? ""
-    : // \x22 is the unicode escape character for the double quotation mark. JSDOM
-      // is not able to parse raw quotation marks in CSS rules, which causes tests
-      // that depend on styling to fail.
-      "after:content-[\x22|\x22] after:mx-2 after:text-foreground";
+    : "after:content-pipe after:mx-2 after:text-foreground";
 
   return (
     <li className={className} key={href}>

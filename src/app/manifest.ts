@@ -30,7 +30,7 @@ export default async function manifest() {
     name,
     short_name: shortName,
     start_url: "/",
-    theme_color: "#fff",
+    theme_color: "#0398ce",
   };
 
   return manifest;
