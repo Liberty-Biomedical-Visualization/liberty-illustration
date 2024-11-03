@@ -2,12 +2,6 @@
 
 Website of Liberty Biomedical Visualization.
 
-## Continuous integration
-
-The project has an automated continuous integration workflow that performs
-linting, testing, and other quality control processes on pull requests to the
-`main` branch.
-
 ## Environment variables
 
 The following environment variables are required to build and test this website:
@@ -22,7 +16,8 @@ When possible, these environment variables should be accessed through the
 `src/lib/config.ts` module. This module validates that the environment is
 complete and will fail fast should a value be undefined.
 
-The following environment variables are optional:
+The following environment variables are optional, and used for running E2E tests
+before deployments:
 
 - `E2E_BASE_URL`
 - `E2E_DEPLOYMENT`
@@ -142,3 +137,31 @@ To check that type annotations satisfy the compiler:
 ```bash
 $ npm run type-check
 ```
+
+## Workflows
+
+There are several GitHub Actions workflows supporting testing and deployment
+automation.
+
+### Continuous integration
+
+The continuous integration workflow is triggered by pull requests against the
+`main` branch. It performs linting, testing, and other quality control
+processes. The site will be built using development content, and E2E tests will
+be run against the build.
+
+### Deployment
+
+The deployment workflow is triggered by new source code releases. Unit and
+integration tests are run against the release, which is then built and deployed
+to a preview environment using production content. E2E tests are run against the
+preview build. If the E2E tests pass, the site is then deployed to production.
+
+### Publish
+
+The publish workflow is triggered via webhook by content management systems when
+production content has been changed. This workflow rebuilds and deploys the
+website using the latest source code release and content changes. Multiple calls
+to the webhook will queue at most one additional pending run of the workflow.
+This guarantees that the latest content changes will be captured without
+rebuilding and deploying the site for each individual change.
