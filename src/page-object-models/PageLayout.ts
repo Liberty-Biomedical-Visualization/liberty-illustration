@@ -21,6 +21,7 @@ export default class PageLayout extends PageObjectModel {
     "Board Certified Medical Illustratorby the Board of Certification of Medical", // @TODO
   );
   readonly copyrightNotice: Locator;
+  readonly navigation = this.page.getByRole("navigation");
   readonly siteHeading = this.page.getByRole("heading", {
     level: 1,
     name: "Abigail Richbourg Liberty, MS",
@@ -30,4 +31,5 @@ export default class PageLayout extends PageObjectModel {
   });
 
   protected content = this.page.getByRole("main");
+  protected homeLink = this.navigation.getByRole("link", { name: "Home" });
 }
