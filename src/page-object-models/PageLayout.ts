@@ -18,7 +18,7 @@ export default class PageLayout extends PageObjectModel {
     name: "Certified Medical Illustrator",
   });
   readonly cmiText = this.page.getByText(
-    "Board Certified Medical Illustratorby the Board of Certification of Medical", // @TODO
+    "Board Certified Medical Illustrator by the Board of Certification of Medical",
   );
   readonly copyrightNotice: Locator;
   readonly navigation = this.page.getByRole("navigation");

@@ -33,6 +33,7 @@ exports[`Footer should match the snapshot 1`] = `
               Board Certified 
               <br />
               Medical Illustrator
+               
             </span>
             <br />
             <span
