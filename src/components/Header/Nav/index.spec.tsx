@@ -1,23 +1,14 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/dom";
 
-import { describedImage, minimalImage } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
-import Header from ".";
+import Nav from ".";
 
-describe("Header", () => {
-  it("should display the site banner", () => {
-    renderHeader();
-    const result = screen.getByRole("banner");
-    expect(result).toBeVisible();
-  });
-
-  it("should display an accessible logo when passed image data with a description", () => {
-    renderHeader({ logoData: describedImage });
-    const result = screen.getByRole("img", {
-      name: describedImage.description,
-    });
+describe("Nav", () => {
+  it("should display navigation", () => {
+    renderNav();
+    const result = screen.getByRole("navigation");
     expect(result).toBeVisible();
   });
 
@@ -26,7 +17,7 @@ describe("Header", () => {
       { href: "/", name: "Home" },
       { href: "/portfolio", name: "Portfolio" },
     ];
-    renderHeader({ pages });
+    renderNav({ pages });
 
     const listItems = screen.getAllByRole("listitem");
 
@@ -45,17 +36,16 @@ describe("Header", () => {
 
   it("should pass className to the outermost element", () => {
     const className = "foo";
-    const result = renderHeader({ className });
+    const result = renderNav({ className });
     expect(result.container.firstChild).toHaveClass(className);
   });
 
   it("should match the snapshot", () => {
-    const result = renderHeader();
+    const result = renderNav();
     expect(result.container).toMatchSnapshot();
   });
 });
 
-const renderHeader = createTestRender(Header, {
-  logoData: minimalImage,
+const renderNav = createTestRender(Nav, {
   pages: [],
 });

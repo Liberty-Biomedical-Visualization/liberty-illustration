@@ -18,6 +18,7 @@ export const jsonConfiguration = {
     amiLogoId: "string",
     cmiLogoId: "string",
     copyrightYear: "number",
+    navPageOrder: "string[]",
     siteLogoId: "string",
   },
   "Site Metadata": {

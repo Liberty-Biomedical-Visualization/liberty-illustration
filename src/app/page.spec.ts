@@ -13,6 +13,20 @@ test.describe("Home", () => {
     await expect(homePage.siteHeading).toBeVisible();
   });
 
+  test("should display navigation", async ({ page }) => {
+    const homePage = await HomePage.goto(page);
+    await expect(homePage.navigation).toBeVisible();
+  });
+
+  test("should not navigate when clicking on the Home link", async ({
+    baseURL,
+    page,
+  }) => {
+    const homePage = await HomePage.goto(page);
+    await homePage.clickHomeLink();
+    expect(page.url()).toBe(baseURL + HomePage.path);
+  });
+
   test("should transition to new image after a period of time", async ({
     page,
   }) => {

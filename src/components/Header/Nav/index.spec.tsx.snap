@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav should match the snapshot 1`] = `
+<div>
+  <nav
+    class="flex flex-nowrap flex-row"
+  >
+    <ul
+      class="flex flex-nowrap flex-row"
+    />
+  </nav>
+</div>
+`;
