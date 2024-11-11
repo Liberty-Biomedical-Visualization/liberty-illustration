@@ -3,19 +3,19 @@
 @tailwind utilities;
 
 :root {
-  --accent-50: #e0f7fc;
-  --accent-100: #b2e0f0;
-  --accent-200: #80c8e8;
-  --accent-300: #4db0d7;
-  --accent-400: #1a99ce;
-  --accent-500: #0398ce;
-  --accent-600: #0280a5;
-  --accent-700: #026d88;
-  --accent-800: #025a6b;
-  --accent-900: #023d4d;
-  --accent-950: #012c3a;
-  --background: #ffffff;
-  --foreground: #171717;
+  --accent-50: 224 247 252;
+  --accent-100: 178 224 240;
+  --accent-200: 128 200 232;
+  --accent-300: 77 176 215;
+  --accent-400: 26 153 206;
+  --accent-500: 3 152 206;
+  --accent-600: 2 128 165;
+  --accent-700: 2 109 136;
+  --accent-800: 2 90 107;
+  --accent-900: 2 61 77;
+  --accent-950: 1 44 58;
+  --background: 255 255 255;
+  --foreground: 23 23 23;
 }
 
 body {
