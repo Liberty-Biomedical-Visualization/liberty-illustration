@@ -3,6 +3,7 @@ import { useId } from "react";
 
 import type { ImageData } from "@/lib/content";
 import resolveClassNames from "@/lib/resolveClassNames";
+import truncateText from "@/lib/truncateText";
 
 export default function Thumbnail(props: Readonly<ThumbnailProps>) {
   const { imageData, onClick } = props;
@@ -61,10 +62,34 @@ export interface ThumbnailProps {
   onClick: () => void;
 }
 
-function transformToThumbnail(imageData: Readonly<ImageData>): ImageData {
-  return { ...imageData, height: THUMBNAIL_SIZE, width: THUMBNAIL_SIZE };
+/**
+ * Maximum count of combined title and description characters before truncation.
+ */
+export const CAPTION_CHARACTER_LIMIT = 128;
+
+function transformToThumbnail(image: Readonly<ImageData>): ImageData {
+  const thumbnail: ImageData = {
+    height: THUMBNAIL_SIZE,
+    src: image.src,
+    width: THUMBNAIL_SIZE,
+  };
+
+  let charactersRemaining = CAPTION_CHARACTER_LIMIT;
+
+  for (const key of TEXT_KEYS) {
+    const text = image[key];
+
+    if (text && charactersRemaining > 0) {
+      const truncatedText = truncateText(text, charactersRemaining);
+      thumbnail[key] = truncatedText;
+      charactersRemaining -= text.length;
+    }
+  }
+
+  return thumbnail;
 }
 
+const TEXT_KEYS = ["title", "description"] as const;
 const THUMBNAIL_SIZE = 256;
 
 const figcaptionClassName =

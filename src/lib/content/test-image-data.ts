@@ -48,6 +48,23 @@ export const integrationTestImage: Readonly<Required<ImageData>> = {
   width: 2_480,
 };
 
+export const longDescribedImage: Readonly<ImageData & { description: string }> =
+  {
+    description:
+      "This Is An Image With An Exceedingly Long Description That Will Be Truncated When Converted to a Thumbnail Because It Is Longer Than the Maximum Character Count",
+    height: 100,
+    src: "https://foo.com/long-titled.jpg",
+    width: 100,
+  };
+
+export const longTitledImage: Readonly<ImageData & { title: string }> = {
+  height: 100,
+  src: "https://foo.com/long-titled.jpg",
+  title:
+    "An Image With An Exceedingly Long Title That Will Be Truncated When Converted to a Thumbnail Because It Is Longer Than the Maximum Character Count",
+  width: 100,
+};
+
 export const minimalImage: Readonly<ImageData> = {
   height: 100,
   src: "https://foo.com/minimal.jpg",

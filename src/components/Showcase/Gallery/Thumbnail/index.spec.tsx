@@ -5,12 +5,15 @@ import userEvent from "@testing-library/user-event";
 import {
   completeImage,
   describedImage,
+  longDescribedImage,
+  longTitledImage,
   minimalImage,
   titledImage,
 } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
+import truncateText from "@/lib/truncateText";
 
-import Thumbnail from ".";
+import Thumbnail, { CAPTION_CHARACTER_LIMIT } from ".";
 
 describe("Thumbnail", () => {
   it("should display a figure", () => {
@@ -19,7 +22,24 @@ describe("Thumbnail", () => {
     expect(figure).toBeVisible();
   });
 
-  it("should not display a description when imageData has no description or title", () => {
+  it("should render a truncated description when imageData has a long description", () => {
+    renderThumbnail({ imageData: longDescribedImage });
+    const description = truncateText(
+      longDescribedImage.description,
+      CAPTION_CHARACTER_LIMIT,
+    );
+    const result = screen.getByText(description);
+    expect(result).toBeInTheDocument();
+  });
+
+  it("should render a truncated title when imageData has a long title", () => {
+    renderThumbnail({ imageData: longTitledImage });
+    const title = truncateText(longTitledImage.title, CAPTION_CHARACTER_LIMIT);
+    const result = screen.getByText(title);
+    expect(result).toBeInTheDocument();
+  });
+
+  it("should not render a description when imageData has no description or title", () => {
     renderThumbnail({ imageData: minimalImage });
     const paragraph = screen.queryByRole("paragraph");
     expect(paragraph).toBeNull();
