@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`GalleryImage should match the snapshot 1`] = `
+exports[`Thumbnail should match the snapshot 1`] = `
 <div>
   <button
     class="overflow-hidden relative"
@@ -13,12 +13,12 @@ exports[`GalleryImage should match the snapshot 1`] = `
         class="aspect-square object-scale-down"
         data-nimg="1"
         decoding="async"
-        height="100"
+        height="256"
         loading="lazy"
-        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75"
-        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75 2x"
+        src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=640&q=75"
+        srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=256&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fminimal.jpg&w=640&q=75 2x"
         style="color: transparent;"
-        width="100"
+        width="256"
       />
       <div
         class="absolute inset-0 active:bg-accent-200/50 hover:bg-accent-50/50 transition"

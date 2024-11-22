@@ -4,9 +4,10 @@ import { useId } from "react";
 import type { ImageData } from "@/lib/content";
 import resolveClassNames from "@/lib/resolveClassNames";
 
-export default function GalleryImage(props: Readonly<GalleryImageProps>) {
+export default function Thumbnail(props: Readonly<ThumbnailProps>) {
   const { imageData, onClick } = props;
-  const { description, height, src, title, width } = imageData;
+  const thumbnailImageData = transformToThumbnail(imageData);
+  const { description, height, src, title, width } = thumbnailImageData;
 
   const className = resolveClassNames(
     "overflow-hidden relative",
@@ -54,11 +55,17 @@ export default function GalleryImage(props: Readonly<GalleryImageProps>) {
   );
 }
 
-export interface GalleryImageProps {
+export interface ThumbnailProps {
   className?: string;
-  imageData: ImageData;
+  imageData: Readonly<ImageData>;
   onClick: () => void;
 }
+
+function transformToThumbnail(imageData: Readonly<ImageData>): ImageData {
+  return { ...imageData, height: THUMBNAIL_SIZE, width: THUMBNAIL_SIZE };
+}
+
+const THUMBNAIL_SIZE = 256;
 
 const figcaptionClassName =
   "absolute inset-0 active:bg-accent-200/50 hover:bg-accent-50/50 transition sm:active:bg-background/90 sm:hover:bg-background/80";

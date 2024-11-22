@@ -10,23 +10,23 @@ import {
 } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
-import GalleryImage from ".";
+import Thumbnail from ".";
 
-describe("GalleryImage", () => {
+describe("Thumbnail", () => {
   it("should display a figure", () => {
-    renderGalleryImage();
+    renderThumbnail();
     const figure = screen.getByRole("figure");
     expect(figure).toBeVisible();
   });
 
   it("should not display a description when imageData has no description or title", () => {
-    renderGalleryImage({ imageData: minimalImage });
+    renderThumbnail({ imageData: minimalImage });
     const paragraph = screen.queryByRole("paragraph");
     expect(paragraph).toBeNull();
   });
 
   it("should display a figure with title as accessible name when imageData has title", () => {
-    renderGalleryImage({ imageData: titledImage });
+    renderThumbnail({ imageData: titledImage });
     const figure = screen.getByRole("figure", {
       name: titledImage.title,
     });
@@ -34,7 +34,7 @@ describe("GalleryImage", () => {
   });
 
   it("should display a figure with description as accessible name when imageData has description", () => {
-    renderGalleryImage({ imageData: describedImage });
+    renderThumbnail({ imageData: describedImage });
     const figure = screen.getByRole("figure", {
       name: describedImage.description,
     });
@@ -42,7 +42,7 @@ describe("GalleryImage", () => {
   });
 
   it("should display a figure with title and description as accessible name when imageData has title and description", () => {
-    renderGalleryImage({ imageData: completeImage });
+    renderThumbnail({ imageData: completeImage });
     const figure = screen.getByRole("figure", {
       name: `${completeImage.title}: ${completeImage.description}`,
     });
@@ -50,13 +50,13 @@ describe("GalleryImage", () => {
   });
 
   it("should display a button", () => {
-    renderGalleryImage();
+    renderThumbnail();
     const button = screen.getByRole("button");
     expect(button).toBeVisible();
   });
 
   it("should display a button directing the user to view the image by its accessible name when available", () => {
-    renderGalleryImage({ imageData: completeImage });
+    renderThumbnail({ imageData: completeImage });
     const button = screen.getByRole("button", {
       name: `${completeImage.title}: ${completeImage.description}`,
     });
@@ -65,7 +65,7 @@ describe("GalleryImage", () => {
 
   it("should call onClick when the button is clicked", async () => {
     const onClick = jest.fn(() => {});
-    renderGalleryImage({ imageData: completeImage, onClick });
+    renderThumbnail({ imageData: completeImage, onClick });
 
     const user = userEvent.setup();
     const button = screen.getByRole("button", {
@@ -78,17 +78,17 @@ describe("GalleryImage", () => {
 
   it("should pass className to the outermost element", () => {
     const className = "foo";
-    const result = renderGalleryImage({ className });
+    const result = renderThumbnail({ className });
     expect(result.container.firstChild).toHaveClass(className);
   });
 
   it("should match the snapshot", () => {
-    const result = renderGalleryImage();
+    const result = renderThumbnail();
     expect(result.container).toMatchSnapshot();
   });
 });
 
-const renderGalleryImage = createTestRender(GalleryImage, {
+const renderThumbnail = createTestRender(Thumbnail, {
   imageData: minimalImage,
   onClick: () => {},
 });
