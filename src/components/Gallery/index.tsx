@@ -1,13 +1,17 @@
+"use client";
+
+import { useState } from "react";
+
 import { type ImageGallery } from "@/lib/content";
 
-import type { OnImageClick } from "..";
 import Thumbnail, { type ThumbnailProps } from "./Thumbnail";
 
 export default function Gallery(props: Readonly<GalleryProps>) {
-  const { className, gallery, onImageClick } = props;
+  const { className, gallery } = props;
   const { images, title } = gallery;
+  const [, setSelectedImageIndex] = useState<number | null>(null);
   const thumbnails = images.map((imageData, index) =>
-    transformToThumbnail(imageData, index, onImageClick),
+    transformToThumbnail(imageData, index, setSelectedImageIndex),
   );
 
   return (
@@ -21,7 +25,6 @@ export default function Gallery(props: Readonly<GalleryProps>) {
 export interface GalleryProps {
   className?: string;
   gallery: Readonly<ImageGallery>;
-  onImageClick: OnImageClick;
 }
 
 function transformToThumbnail(

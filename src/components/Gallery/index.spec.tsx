@@ -1,6 +1,5 @@
-import { describe, expect, it, jest } from "@jest/globals";
+import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/react";
-import userEvent from "@testing-library/user-event";
 
 import assertIsDefined from "@/lib/assertIsDefined";
 import {
@@ -10,7 +9,6 @@ import {
 import createTestRender from "@/lib/createTestRender";
 
 import Gallery from ".";
-import { atChecked } from "@/lib/array";
 
 describe("Gallery", () => {
   it("should display a second level heading with the gallery title", () => {
@@ -22,27 +20,13 @@ describe("Gallery", () => {
     expect(heading).toBeVisible();
   });
 
-  it("should display images when the gallery has images", () => {
+  it("should display thumbnails when the gallery has images", () => {
     renderGallery({ gallery: completeImageGallery });
 
     for (const image of completeImageGallery.images) {
       assertIsDefined(image.description);
-      const img = screen.getByRole("img", { name: image.description });
-      expect(img).toBeVisible();
-    }
-  });
-
-  it("should should call onClick with the index of each image when clicked", async () => {
-    const onImageClick = jest.fn();
-    renderGallery({ gallery: completeImageGallery, onImageClick });
-    const user = userEvent.setup();
-
-    for (let index = 0; index < completeImageGallery.images.length; ++index) {
-      const image = atChecked(completeImageGallery.images, index);
-      assertIsDefined(image.description);
-      const img = screen.getByRole("img", { name: image.description });
-      await user.click(img);
-      expect(onImageClick).toHaveBeenCalledWith(index);
+      const thumbnail = screen.getByRole("img", { name: image.description });
+      expect(thumbnail).toBeVisible();
     }
   });
 
@@ -60,5 +44,4 @@ describe("Gallery", () => {
 
 const renderGallery = createTestRender(Gallery, {
   gallery: minimalImageGallery,
-  onImageClick: () => {},
 });
