@@ -7,12 +7,15 @@ export default function CarouselStage(props: Readonly<CarouselStageProps>) {
     currentImage,
     nextImage,
     previousImage,
+    showCaption,
     transition,
     transitionDuration,
   } = props;
 
   const className = resolveClassNames(
-    "flex flex-nowrap overflow-hidden w-260",
+    // sm:w-260 makes avoids extra whitespace and possible reflow by fixing the
+    // stage slightly larger than the maximum image width of 1,024 pixels.
+    "flex flex-nowrap max-h-screen overflow-x-hidden sm:w-260",
     props.className,
   );
 
@@ -22,7 +25,7 @@ export default function CarouselStage(props: Readonly<CarouselStageProps>) {
     transitionDuration,
   );
   const slides = images.map((image, index) =>
-    mapToSlide(image, index, transition, transitionClassName),
+    mapToSlide(image, index, transition, transitionClassName, showCaption),
   );
 
   return <div className={className}>{slides}</div>;
@@ -33,6 +36,7 @@ export interface CarouselStageProps {
   currentImage: CarouselSlideProps["imageData"];
   nextImage: CarouselSlideProps["imageData"];
   previousImage: CarouselSlideProps["imageData"];
+  showCaption?: CarouselSlideProps["showCaption"];
   transition: Transition | null;
   transitionDuration: TransitionDuration;
 }
@@ -76,6 +80,7 @@ function mapToSlide(
   index: number,
   transition: Transition | null,
   transitionClassName: string,
+  showCaption: CarouselSlideProps["showCaption"],
 ) {
   const className = resolveSlideClassName(
     index,
@@ -92,6 +97,7 @@ function mapToSlide(
       className={className}
       imageData={sizedImageData}
       key={index}
+      showCaption={!!showCaption}
     />
   );
 }

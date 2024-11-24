@@ -1,12 +1,43 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/dom";
 
-import { imageA, imageB, imageC } from "@/lib/content/test-image-data";
+import {
+  completeImage,
+  describedImage,
+  imageA,
+  imageB,
+  imageC,
+  titledImage,
+} from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
 import CarouselStage from ".";
 
 describe("CarouselStage", () => {
+  it("should display figure with description as accessible name when currentImage has description and caption is shown", () => {
+    renderCarouselStage({ currentImage: describedImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: describedImage.description,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title as accessible name when currentImage has title and caption is shown", () => {
+    renderCarouselStage({ currentImage: titledImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: titledImage.title,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title and description as accessible name when currentImage has both title and description, and caption is shown", () => {
+    renderCarouselStage({ currentImage: completeImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: `${completeImage.title} ${completeImage.description}`,
+    });
+    expect(result).toBeVisible();
+  });
+
   it("should pass className to the outermost element", () => {
     const className = "foo";
     const result = renderCarouselStage({ className });

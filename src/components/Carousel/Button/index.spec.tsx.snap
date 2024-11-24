@@ -3,7 +3,7 @@
 exports[`CarouselButton should match the next button snapshot 1`] = `
 <div>
   <button
-    class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 px-4 py-12 text-background transition-colors"
+    class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 py-2 sm:px-4 sm:py-12 text-background transition-colors"
   >
     <svg
       aria-hidden="true"
@@ -32,7 +32,7 @@ exports[`CarouselButton should match the next button snapshot 1`] = `
 exports[`CarouselButton should match the previous button snapshot 1`] = `
 <div>
   <button
-    class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 px-4 py-12 text-background transition-colors"
+    class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 py-2 sm:px-4 sm:py-12 text-background transition-colors"
   >
     <svg
       aria-hidden="true"

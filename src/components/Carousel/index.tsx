@@ -15,7 +15,7 @@ import CarouselButton from "./Button";
 import CarouselStage, { type CarouselStageProps } from "./Stage";
 
 export default function Carousel(props: Readonly<CarouselProps>) {
-  const { images, slideDuration, transitionDuration } = props;
+  const { images, showCaption, slideDuration, transitionDuration } = props;
 
   const advanceSlideIntervalId = useRef<number | null>(null);
   const transitionTimeoutId = useRef<number | null>(null);
@@ -84,7 +84,10 @@ export default function Carousel(props: Readonly<CarouselProps>) {
       slideDuration,
     );
 
-  const className = resolveClassNames("flex justify-center", props.className);
+  const className = resolveClassNames(
+    "gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center",
+    props.className,
+  );
   const buttonsAreDisplayed = images.length > 1;
   const buttonsAreDisabled = transition !== null;
   const currentImage = array.atChecked(images, currentIndex);
@@ -95,22 +98,24 @@ export default function Carousel(props: Readonly<CarouselProps>) {
     <div className={className}>
       {buttonsAreDisplayed && (
         <CarouselButton
-          className="my-auto"
+          className="my-auto order-1 sm:order-none col-span-1"
           disabled={buttonsAreDisabled}
           onClick={handlePreviousButtonClick}
           type="previous"
         />
       )}
       <CarouselStage
+        className="order-3 sm:order-none col-span-2"
         currentImage={currentImage}
         nextImage={nextImage}
         previousImage={previousImage}
+        showCaption={showCaption}
         transition={transition}
         transitionDuration={transitionDuration}
       />
       {buttonsAreDisplayed && (
         <CarouselButton
-          className="my-auto"
+          className="my-auto order-2 sm:order-none col-span-1"
           disabled={buttonsAreDisabled}
           onClick={handleNextButtonClick}
           type="next"
@@ -123,7 +128,8 @@ export default function Carousel(props: Readonly<CarouselProps>) {
 export interface CarouselProps {
   className?: string;
   images: readonly CarouselStageProps["currentImage"][];
-  slideDuration: number;
+  showCaption?: CarouselStageProps["showCaption"];
+  slideDuration: number | null;
   transitionDuration: CarouselStageProps["transitionDuration"];
 }
 
@@ -153,9 +159,9 @@ function initializeSlideshow(
   advanceSlide: ChangeSlide,
   intervalId: TimerId,
   slideCount: number,
-  slideDuration: number,
+  slideDuration: number | null,
 ) {
-  if (slideCount > 1) {
+  if (slideCount > 1 && slideDuration !== null) {
     setAdvanceSlideInterval(advanceSlide, intervalId, slideDuration);
     const finalizeSlideshow = () => clearAdvanceSlideInterval(intervalId);
     return finalizeSlideshow;
@@ -187,11 +193,18 @@ function handleButtonClick(
   advanceSlide: ChangeSlide,
   advanceSlideIntervalId: TimerId,
   changeSlideOnClick: ChangeSlide,
-  slideDuration: number,
+  slideDuration: number | null,
 ) {
   clearAdvanceSlideInterval(advanceSlideIntervalId);
   changeSlideOnClick();
-  setAdvanceSlideInterval(advanceSlide, advanceSlideIntervalId, slideDuration);
+
+  if (slideDuration !== null) {
+    setAdvanceSlideInterval(
+      advanceSlide,
+      advanceSlideIntervalId,
+      slideDuration,
+    );
+  }
 }
 
 type ChangeSlide = () => void;
