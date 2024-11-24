@@ -2,7 +2,14 @@ import { afterEach, describe, expect, it, jest } from "@jest/globals";
 import { act, screen } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 
-import { imageA, imageB, imageC } from "@/lib/content/test-image-data";
+import {
+  completeImage,
+  describedImage,
+  imageA,
+  imageB,
+  imageC,
+  titledImage,
+} from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
 import Carousel from ".";
@@ -40,6 +47,30 @@ describe("Carousel", () => {
 
     await act(() => jest.advanceTimersByTimeAsync(transitionDuration));
     expect(button).not.toBeDisabled();
+  });
+
+  it("should display figure with description as accessible name when image has description and caption is shown", () => {
+    renderCarousel({ images: [describedImage], showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: describedImage.description,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title as accessible name when image has title and caption is shown", () => {
+    renderCarousel({ images: [titledImage], showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: titledImage.title,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title and description as accessible name when image has both title and description, and caption is shown", () => {
+    renderCarousel({ images: [completeImage], showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: `${completeImage.title} ${completeImage.description}`,
+    });
+    expect(result).toBeVisible();
   });
 
   it("should pass className to the outermost element", () => {

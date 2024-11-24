@@ -2,12 +2,12 @@
 
 exports[`CarouselSlide should match the snapshot 1`] = `
 <div>
-  <div
+  <figure
     class="flex flex-col items-center max-h-screen min-w-full sm:justify-center sm:px-2 w-full"
   >
     <img
       alt=""
-      class="h-auto max-h-full max-w-full mx-auto object-contain w-auto"
+      class="max-h-full max-w-full mx-auto my-auto object-contain w-auto"
       data-nimg="1"
       decoding="async"
       height="100"
@@ -17,6 +17,6 @@ exports[`CarouselSlide should match the snapshot 1`] = `
       style="color: transparent;"
       width="100"
     />
-  </div>
+  </figure>
 </div>
 `;

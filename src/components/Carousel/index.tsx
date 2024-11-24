@@ -15,7 +15,7 @@ import CarouselButton from "./Button";
 import CarouselStage, { type CarouselStageProps } from "./Stage";
 
 export default function Carousel(props: Readonly<CarouselProps>) {
-  const { images, slideDuration, transitionDuration } = props;
+  const { images, showCaption, slideDuration, transitionDuration } = props;
 
   const advanceSlideIntervalId = useRef<number | null>(null);
   const transitionTimeoutId = useRef<number | null>(null);
@@ -109,6 +109,7 @@ export default function Carousel(props: Readonly<CarouselProps>) {
         currentImage={currentImage}
         nextImage={nextImage}
         previousImage={previousImage}
+        showCaption={showCaption}
         transition={transition}
         transitionDuration={transitionDuration}
       />
@@ -127,6 +128,7 @@ export default function Carousel(props: Readonly<CarouselProps>) {
 export interface CarouselProps {
   className?: string;
   images: readonly CarouselStageProps["currentImage"][];
+  showCaption?: CarouselStageProps["showCaption"];
   slideDuration: number | null;
   transitionDuration: CarouselStageProps["transitionDuration"];
 }

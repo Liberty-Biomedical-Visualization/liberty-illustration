@@ -5,6 +5,7 @@ import {
   completeImage,
   describedImage,
   minimalImage,
+  titledImage,
 } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
 
@@ -24,6 +25,45 @@ describe("CarouselSlide", () => {
     const result = screen.getByRole("img", {
       description: completeImage.title,
     });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with description as accessible name when imageData has description and caption is shown", () => {
+    renderCarouselSlide({ imageData: describedImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: describedImage.description,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title as accessible name when imageData has title and caption is shown", () => {
+    renderCarouselSlide({ imageData: titledImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: titledImage.title,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display figure with title and description as accessible name when imageData has both title and description, and caption is shown", () => {
+    renderCarouselSlide({ imageData: completeImage, showCaption: true });
+    const result = screen.getByRole("figure", {
+      name: `${completeImage.title} ${completeImage.description}`,
+    });
+    expect(result).toBeVisible();
+  });
+
+  it("should display description when imageData has description and caption is shown", () => {
+    renderCarouselSlide({
+      imageData: describedImage,
+      showCaption: true,
+    });
+    const result = screen.getByText(describedImage.description);
+    expect(result).toBeVisible();
+  });
+
+  it("should display title when imageData has title and caption is shown", () => {
+    renderCarouselSlide({ imageData: titledImage, showCaption: true });
+    const result = screen.getByText(titledImage.title);
     expect(result).toBeVisible();
   });
 

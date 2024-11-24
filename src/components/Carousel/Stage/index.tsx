@@ -7,6 +7,7 @@ export default function CarouselStage(props: Readonly<CarouselStageProps>) {
     currentImage,
     nextImage,
     previousImage,
+    showCaption,
     transition,
     transitionDuration,
   } = props;
@@ -24,7 +25,7 @@ export default function CarouselStage(props: Readonly<CarouselStageProps>) {
     transitionDuration,
   );
   const slides = images.map((image, index) =>
-    mapToSlide(image, index, transition, transitionClassName),
+    mapToSlide(image, index, transition, transitionClassName, showCaption),
   );
 
   return <div className={className}>{slides}</div>;
@@ -35,6 +36,7 @@ export interface CarouselStageProps {
   currentImage: CarouselSlideProps["imageData"];
   nextImage: CarouselSlideProps["imageData"];
   previousImage: CarouselSlideProps["imageData"];
+  showCaption?: CarouselSlideProps["showCaption"];
   transition: Transition | null;
   transitionDuration: TransitionDuration;
 }
@@ -78,6 +80,7 @@ function mapToSlide(
   index: number,
   transition: Transition | null,
   transitionClassName: string,
+  showCaption: CarouselSlideProps["showCaption"],
 ) {
   const className = resolveSlideClassName(
     index,
@@ -94,6 +97,7 @@ function mapToSlide(
       className={className}
       imageData={sizedImageData}
       key={index}
+      showCaption={!!showCaption}
     />
   );
 }
