@@ -253,6 +253,35 @@ describe("Carousel", () => {
       expect(slideAfterTransition).toBeNull();
     });
 
+    it("should advance to the original slide when the next button is clicked, transition completes, and slideDuration elapses", async () => {
+      jest.useFakeTimers();
+      const slideDuration = 300;
+      const transitionDuration = 100;
+      renderCarousel({ images, slideDuration, transitionDuration });
+      const originalSlide = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlide).toBeVisible();
+
+      const user = userEvent.setup({
+        advanceTimers: jest.advanceTimersByTimeAsync,
+      });
+      const nextButton = screen.getByRole("button", { name: "Next image" });
+      await user.click(nextButton);
+
+      await act(() => jest.advanceTimersByTimeAsync(transitionDuration));
+      const originalSlideAfterTransition = screen.queryByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterTransition).toBeNull();
+
+      await act(() => jest.advanceTimersByTimeAsync(slideDuration));
+      const originalSlideAfterDurationElapse = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterDurationElapse).toBeVisible();
+    });
+
     it("should regress to the previous slide when the previous button is clicked", async () => {
       renderCarousel({ images });
       const slideBeforeRegress = screen.queryByRole("img", {
@@ -294,6 +323,37 @@ describe("Carousel", () => {
         name: imageA.description,
       });
       expect(slideAfterTransition).toBeNull();
+    });
+
+    it("should advance to the original slide when the previous button is clicked, transition completes, and slideDuration elapses", async () => {
+      jest.useFakeTimers();
+      const slideDuration = 300;
+      const transitionDuration = 100;
+      renderCarousel({ images, slideDuration, transitionDuration });
+      const originalSlide = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlide).toBeVisible();
+
+      const user = userEvent.setup({
+        advanceTimers: jest.advanceTimersByTimeAsync,
+      });
+      const previousButton = screen.getByRole("button", {
+        name: "Previous image",
+      });
+      await user.click(previousButton);
+
+      await act(() => jest.advanceTimersByTimeAsync(transitionDuration));
+      const originalSlideAfterTransition = screen.queryByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterTransition).toBeNull();
+
+      await act(() => jest.advanceTimersByTimeAsync(slideDuration));
+      const originalSlideAfterDurationElapse = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterDurationElapse).toBeVisible();
     });
 
     it("should match the snapshot", () => {
@@ -404,6 +464,35 @@ describe("Carousel", () => {
       expect(slideAfterTransition).toBeNull();
     });
 
+    it("should advance to the third slide when the next button is clicked, transition completes, and slideDuration elapses", async () => {
+      jest.useFakeTimers();
+      const slideDuration = 300;
+      const transitionDuration = 100;
+      renderCarousel({ images, slideDuration, transitionDuration });
+      const originalSlide = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlide).toBeVisible();
+
+      const user = userEvent.setup({
+        advanceTimers: jest.advanceTimersByTimeAsync,
+      });
+      const nextButton = screen.getByRole("button", { name: "Next image" });
+      await user.click(nextButton);
+
+      await act(() => jest.advanceTimersByTimeAsync(transitionDuration));
+      const originalSlideAfterTransition = screen.queryByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterTransition).toBeNull();
+
+      await act(() => jest.advanceTimersByTimeAsync(slideDuration));
+      const thirdSlide = screen.getByRole("img", {
+        name: imageC.description,
+      });
+      expect(thirdSlide).toBeVisible();
+    });
+
     it("should regress to the previous slide when the previous button is clicked", async () => {
       renderCarousel({ images });
       const slideBeforeRegress = screen.queryByRole("img", {
@@ -445,6 +534,37 @@ describe("Carousel", () => {
         name: imageA.description,
       });
       expect(slideAfterTransition).toBeNull();
+    });
+
+    it("should advance to the original slide when the previous button is clicked, transition completes, and slideDuration elapses", async () => {
+      jest.useFakeTimers();
+      const slideDuration = 300;
+      const transitionDuration = 100;
+      renderCarousel({ images, slideDuration, transitionDuration });
+      const originalSlide = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlide).toBeVisible();
+
+      const user = userEvent.setup({
+        advanceTimers: jest.advanceTimersByTimeAsync,
+      });
+      const previousButton = screen.getByRole("button", {
+        name: "Previous image",
+      });
+      await user.click(previousButton);
+
+      await act(() => jest.advanceTimersByTimeAsync(transitionDuration));
+      const originalSlideAfterTransition = screen.queryByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterTransition).toBeNull();
+
+      await act(() => jest.advanceTimersByTimeAsync(slideDuration));
+      const originalSlideAfterDurationElapse = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(originalSlideAfterDurationElapse).toBeVisible();
     });
 
     it("should match the snapshot", () => {
