@@ -123,7 +123,7 @@ export default function Carousel(props: Readonly<CarouselProps>) {
 export interface CarouselProps {
   className?: string;
   images: readonly CarouselStageProps["currentImage"][];
-  slideDuration: number;
+  slideDuration: number | null;
   transitionDuration: CarouselStageProps["transitionDuration"];
 }
 
@@ -153,9 +153,9 @@ function initializeSlideshow(
   advanceSlide: ChangeSlide,
   intervalId: TimerId,
   slideCount: number,
-  slideDuration: number,
+  slideDuration: number | null,
 ) {
-  if (slideCount > 1) {
+  if (slideCount > 1 && slideDuration !== null) {
     setAdvanceSlideInterval(advanceSlide, intervalId, slideDuration);
     const finalizeSlideshow = () => clearAdvanceSlideInterval(intervalId);
     return finalizeSlideshow;
@@ -187,11 +187,18 @@ function handleButtonClick(
   advanceSlide: ChangeSlide,
   advanceSlideIntervalId: TimerId,
   changeSlideOnClick: ChangeSlide,
-  slideDuration: number,
+  slideDuration: number | null,
 ) {
   clearAdvanceSlideInterval(advanceSlideIntervalId);
   changeSlideOnClick();
-  setAdvanceSlideInterval(advanceSlide, advanceSlideIntervalId, slideDuration);
+
+  if (slideDuration !== null) {
+    setAdvanceSlideInterval(
+      advanceSlide,
+      advanceSlideIntervalId,
+      slideDuration,
+    );
+  }
 }
 
 type ChangeSlide = () => void;

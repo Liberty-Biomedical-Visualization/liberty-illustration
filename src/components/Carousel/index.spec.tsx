@@ -131,6 +131,22 @@ describe("Carousel", () => {
       expect(currentSlide).toBeVisible();
     });
 
+    it("should not advance to the next slide when the slideDuration is null", async () => {
+      jest.useFakeTimers();
+      const slideDuration = null;
+      renderCarousel({ images, slideDuration });
+      const slideBeforeElapse = screen.getByRole("img", {
+        name: imageA.description,
+      });
+
+      await act(() => jest.advanceTimersByTimeAsync(5_000));
+
+      const slideAfterFiveSeconds = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(slideBeforeElapse).toBe(slideAfterFiveSeconds);
+    });
+
     it("should advance to the next slide when the slideDuration elapses", async () => {
       jest.useFakeTimers();
       const slideDuration = 300;
@@ -266,6 +282,22 @@ describe("Carousel", () => {
       expect(currentSlide).toBeVisible();
     });
 
+    it("should not advance to the next slide when the slideDuration is null", async () => {
+      jest.useFakeTimers();
+      const slideDuration = 5_000;
+      renderCarousel({ images, slideDuration });
+      const slideBeforeElapse = screen.getByRole("img", {
+        name: imageA.description,
+      });
+
+      await act(() => jest.advanceTimersByTimeAsync(5_000));
+
+      const slideAfterFiveSeconds = screen.getByRole("img", {
+        name: imageA.description,
+      });
+      expect(slideBeforeElapse).toBe(slideAfterFiveSeconds);
+    });
+
     it("should advance to the next slide when the slideDuration elapses", async () => {
       jest.useFakeTimers();
       const slideDuration = 300;
@@ -393,6 +425,6 @@ describe("Carousel", () => {
 
 const renderCarousel = createTestRender(Carousel, {
   images: [imageA, imageB, imageC],
-  slideDuration: 5_000,
+  slideDuration: null,
   transitionDuration: 1_000,
 });
