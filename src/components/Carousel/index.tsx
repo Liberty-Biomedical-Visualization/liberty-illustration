@@ -84,7 +84,10 @@ export default function Carousel(props: Readonly<CarouselProps>) {
       slideDuration,
     );
 
-  const className = resolveClassNames("flex justify-center", props.className);
+  const className = resolveClassNames(
+    "gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center",
+    props.className,
+  );
   const buttonsAreDisplayed = images.length > 1;
   const buttonsAreDisabled = transition !== null;
   const currentImage = array.atChecked(images, currentIndex);
@@ -95,13 +98,14 @@ export default function Carousel(props: Readonly<CarouselProps>) {
     <div className={className}>
       {buttonsAreDisplayed && (
         <CarouselButton
-          className="my-auto"
+          className="my-auto order-1 sm:order-none col-span-1"
           disabled={buttonsAreDisabled}
           onClick={handlePreviousButtonClick}
           type="previous"
         />
       )}
       <CarouselStage
+        className="order-3 sm:order-none col-span-2"
         currentImage={currentImage}
         nextImage={nextImage}
         previousImage={previousImage}
@@ -110,7 +114,7 @@ export default function Carousel(props: Readonly<CarouselProps>) {
       />
       {buttonsAreDisplayed && (
         <CarouselButton
-          className="my-auto"
+          className="my-auto order-2 sm:order-none col-span-1"
           disabled={buttonsAreDisabled}
           onClick={handleNextButtonClick}
           type="next"

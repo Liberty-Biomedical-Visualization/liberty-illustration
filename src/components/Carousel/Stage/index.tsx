@@ -12,7 +12,9 @@ export default function CarouselStage(props: Readonly<CarouselStageProps>) {
   } = props;
 
   const className = resolveClassNames(
-    "flex flex-nowrap overflow-hidden w-260",
+    // sm:w-260 makes avoids extra whitespace and possible reflow by fixing the
+    // stage slightly larger than the maximum image width of 1,024 pixels.
+    "flex flex-nowrap max-h-screen overflow-x-hidden sm:w-260",
     props.className,
   );
 

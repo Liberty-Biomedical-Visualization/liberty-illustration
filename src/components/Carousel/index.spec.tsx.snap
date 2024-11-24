@@ -3,10 +3,10 @@
 exports[`Carousel when passed multiple images should match the snapshot 1`] = `
 <div>
   <div
-    class="flex justify-center"
+    class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center"
   >
     <button
-      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -30,10 +30,10 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
       </span>
     </button>
     <div
-      class="flex flex-nowrap overflow-hidden w-260"
+      class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
     >
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as C and used for testing."
@@ -50,7 +50,7 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex items-center min-w-full px-2 relative right-full w-full"
+        class="flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as A and used for testing."
@@ -67,7 +67,7 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as B and used for testing."
@@ -85,7 +85,7 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
       </div>
     </div>
     <button
-      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -115,13 +115,13 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
 exports[`Carousel when passed one image should match the snapshot 1`] = `
 <div>
   <div
-    class="flex justify-center"
+    class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center"
   >
     <div
-      class="flex flex-nowrap overflow-hidden w-260"
+      class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
     >
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as A and used for testing."
@@ -138,7 +138,7 @@ exports[`Carousel when passed one image should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex items-center min-w-full px-2 relative right-full w-full"
+        class="flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as A and used for testing."
@@ -155,7 +155,7 @@ exports[`Carousel when passed one image should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as A and used for testing."
@@ -179,10 +179,10 @@ exports[`Carousel when passed one image should match the snapshot 1`] = `
 exports[`Carousel when passed two images should match the snapshot 1`] = `
 <div>
   <div
-    class="flex justify-center"
+    class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center"
   >
     <button
-      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -206,10 +206,10 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
       </span>
     </button>
     <div
-      class="flex flex-nowrap overflow-hidden w-260"
+      class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
     >
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as B and used for testing."
@@ -226,7 +226,7 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex items-center min-w-full px-2 relative right-full w-full"
+        class="flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as A and used for testing."
@@ -243,7 +243,7 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
         />
       </div>
       <div
-        class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+        class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
       >
         <img
           alt="An image identified as B and used for testing."
@@ -261,7 +261,7 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
       </div>
     </div>
     <button
-      class="bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 my-auto px-4 py-12 text-background transition-colors"
+      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"

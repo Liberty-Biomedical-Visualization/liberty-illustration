@@ -3,7 +3,7 @@
 exports[`CarouselSlide should match the snapshot 1`] = `
 <div>
   <div
-    class="flex items-center min-w-full px-2 w-full"
+    class="flex flex-col items-center max-h-screen min-w-full sm:justify-center sm:px-2 w-full"
   >
     <img
       alt=""

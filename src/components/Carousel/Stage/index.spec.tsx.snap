@@ -3,10 +3,10 @@
 exports[`CarouselStage when transition is next should match the snapshot 1`] = `
 <div>
   <div
-    class="flex flex-nowrap overflow-hidden w-260"
+    class="flex flex-nowrap max-h-screen overflow-x-hidden sm:w-260"
   >
     <div
-      class="-translate-x-full duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition w-full"
+      class="-translate-x-full duration-1000 flex flex-col invisible items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 transform transition w-full"
     >
       <img
         alt="An image identified as C and used for testing."
@@ -23,7 +23,7 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
       />
     </div>
     <div
-      class="-translate-x-full duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition w-full"
+      class="-translate-x-full duration-1000 flex flex-col items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 transform transition w-full"
     >
       <img
         alt="An image identified as A and used for testing."
@@ -40,7 +40,7 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
       />
     </div>
     <div
-      class="-translate-x-full duration-1000 flex items-center min-w-full px-2 relative right-full transform transition w-full"
+      class="-translate-x-full duration-1000 flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 transform transition w-full"
     >
       <img
         alt="An image identified as B and used for testing."
@@ -63,10 +63,10 @@ exports[`CarouselStage when transition is next should match the snapshot 1`] = `
 exports[`CarouselStage when transition is null should match the snapshot 1`] = `
 <div>
   <div
-    class="flex flex-nowrap overflow-hidden w-260"
+    class="flex flex-nowrap max-h-screen overflow-x-hidden sm:w-260"
   >
     <div
-      class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
     >
       <img
         alt="An image identified as C and used for testing."
@@ -83,7 +83,7 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
       />
     </div>
     <div
-      class="flex items-center min-w-full px-2 relative right-full w-full"
+      class="flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 w-full"
     >
       <img
         alt="An image identified as A and used for testing."
@@ -100,7 +100,7 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
       />
     </div>
     <div
-      class="flex invisible items-center min-w-full opacity-0 px-2 relative right-full w-full"
+      class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 w-full"
     >
       <img
         alt="An image identified as B and used for testing."
@@ -123,10 +123,10 @@ exports[`CarouselStage when transition is null should match the snapshot 1`] = `
 exports[`CarouselStage when transition is previous should match the snapshot 1`] = `
 <div>
   <div
-    class="flex flex-nowrap overflow-hidden w-260"
+    class="flex flex-nowrap max-h-screen overflow-x-hidden sm:w-260"
   >
     <div
-      class="duration-1000 flex items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
+      class="duration-1000 flex flex-col items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 transform transition translate-x-full w-full"
     >
       <img
         alt="An image identified as C and used for testing."
@@ -143,7 +143,7 @@ exports[`CarouselStage when transition is previous should match the snapshot 1`]
       />
     </div>
     <div
-      class="duration-1000 flex items-center min-w-full opacity-0 px-2 relative right-full transform transition translate-x-full w-full"
+      class="duration-1000 flex flex-col items-center max-h-screen min-w-full opacity-0 relative right-full sm:justify-center sm:px-2 transform transition translate-x-full w-full"
     >
       <img
         alt="An image identified as A and used for testing."
@@ -160,7 +160,7 @@ exports[`CarouselStage when transition is previous should match the snapshot 1`]
       />
     </div>
     <div
-      class="duration-1000 flex invisible items-center min-w-full px-2 relative right-full transform transition translate-x-full w-full"
+      class="duration-1000 flex flex-col invisible items-center max-h-screen min-w-full relative right-full sm:justify-center sm:px-2 transform transition translate-x-full w-full"
     >
       <img
         alt="An image identified as B and used for testing."

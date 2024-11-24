@@ -8,7 +8,7 @@ export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
   const { description, height, src, title, width } = imageData;
 
   const className = resolveClassNames(
-    "flex items-center min-w-full px-2 w-full",
+    "flex flex-col items-center sm:justify-center max-h-screen min-w-full sm:px-2 w-full",
     props.className,
   );
 
