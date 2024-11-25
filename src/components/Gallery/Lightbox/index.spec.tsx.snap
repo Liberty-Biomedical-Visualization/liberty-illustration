@@ -1,0 +1,582 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Lightbox when passed multiple images should match the snapshot 1`] = `
+<div>
+  <div
+    aria-modal="true"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    role="dialog"
+  >
+    <button
+      class="absolute active:text-neutral-500 hover:text-neutral-300 right-1 text-neutral-50 top-1 transition"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-xmark size-8 sm:size-12"
+        data-icon="xmark"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 384 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Close
+      </span>
+    </button>
+    <div
+      class="container h-full"
+    >
+      <div
+        class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] h-full sm:flex sm:gap-0 sm:justify-center"
+      >
+        <button
+          class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-chevron-left "
+            data-icon="chevron-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+          >
+            Previous image
+          </span>
+        </button>
+        <div
+          class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
+        >
+          <figure
+            aria-labelledby=":r1d:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as C and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fc.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image C"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":r1d:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image C
+                </span>
+                <br />
+                An image identified as C and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":r1e:"
+            class="flex flex-col items-center max-h-screen min-w-full px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as A and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image A"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":r1e:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image A
+                </span>
+                <br />
+                An image identified as A and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":r1f:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as B and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image B"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":r1f:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image B
+                </span>
+                <br />
+                An image identified as B and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <button
+          class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-chevron-right "
+            data-icon="chevron-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+          >
+            Next image
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lightbox when passed one image should match the snapshot 1`] = `
+<div>
+  <div
+    aria-modal="true"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    role="dialog"
+  >
+    <button
+      class="absolute active:text-neutral-500 hover:text-neutral-300 right-1 text-neutral-50 top-1 transition"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-xmark size-8 sm:size-12"
+        data-icon="xmark"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 384 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Close
+      </span>
+    </button>
+    <div
+      class="container h-full"
+    >
+      <div
+        class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] h-full sm:flex sm:gap-0 sm:justify-center"
+      >
+        <div
+          class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
+        >
+          <figure
+            aria-labelledby=":r9:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as A and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image A"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":r9:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image A
+                </span>
+                <br />
+                An image identified as A and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":ra:"
+            class="flex flex-col items-center max-h-screen min-w-full px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as A and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image A"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":ra:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image A
+                </span>
+                <br />
+                An image identified as A and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":rb:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as A and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image A"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":rb:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image A
+                </span>
+                <br />
+                An image identified as A and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lightbox when passed two images should match the snapshot 1`] = `
+<div>
+  <div
+    aria-modal="true"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    role="dialog"
+  >
+    <button
+      class="absolute active:text-neutral-500 hover:text-neutral-300 right-1 text-neutral-50 top-1 transition"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-xmark size-8 sm:size-12"
+        data-icon="xmark"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 384 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Close
+      </span>
+    </button>
+    <div
+      class="container h-full"
+    >
+      <div
+        class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] h-full sm:flex sm:gap-0 sm:justify-center"
+      >
+        <button
+          class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-chevron-left "
+            data-icon="chevron-left"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M9.4 233.4c-12.5 12.5-12.5 32.8 0 45.3l192 192c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L77.3 256 246.6 86.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0l-192 192z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+          >
+            Previous image
+          </span>
+        </button>
+        <div
+          class="col-span-2 flex flex-nowrap max-h-screen order-3 overflow-x-hidden sm:order-none sm:w-260"
+        >
+          <figure
+            aria-labelledby=":rr:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as B and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image B"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":rr:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image B
+                </span>
+                <br />
+                An image identified as B and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":rs:"
+            class="flex flex-col items-center max-h-screen min-w-full px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as A and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fa.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image A"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":rs:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image A
+                </span>
+                <br />
+                An image identified as A and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+          <figure
+            aria-labelledby=":rt:"
+            class="flex flex-col invisible items-center max-h-screen min-w-full opacity-0 px-2 relative right-full sm:justify-center w-full"
+          >
+            <img
+              alt="An image identified as B and used for testing."
+              class="max-h-[75%] max-w-full mx-auto object-contain w-auto"
+              data-nimg="1"
+              decoding="async"
+              height="100"
+              loading="lazy"
+              src="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75"
+              srcset="/_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=128&q=75 1x, /_next/image?url=https%3A%2F%2Ffoo.com%2Fb.jpg&w=256&q=75 2x"
+              style="color: transparent;"
+              title="Image B"
+              width="100"
+            />
+            <figcaption
+              class="mt-4 overflow-y-auto"
+              id=":rt:"
+            >
+              <p
+                class="max-w-prose mx-auto text-background text-center"
+              >
+                <span
+                  class="font-bold text-lg"
+                >
+                  Image B
+                </span>
+                <br />
+                An image identified as B and used for testing.
+              </p>
+            </figcaption>
+          </figure>
+        </div>
+        <button
+          class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+        >
+          <svg
+            aria-hidden="true"
+            class="svg-inline--fa fa-chevron-right "
+            data-icon="chevron-right"
+            data-prefix="fas"
+            focusable="false"
+            role="img"
+            viewBox="0 0 320 512"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M310.6 233.4c12.5 12.5 12.5 32.8 0 45.3l-192 192c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3L242.7 256 73.4 86.6c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0l192 192z"
+              fill="currentColor"
+            />
+          </svg>
+          <span
+            class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+          >
+            Next image
+          </span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Lightbox when passed zero images should match the snapshot 1`] = `
+<div>
+  <div
+    aria-modal="true"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    role="dialog"
+  >
+    <button
+      class="absolute active:text-neutral-500 hover:text-neutral-300 right-1 text-neutral-50 top-1 transition"
+    >
+      <svg
+        aria-hidden="true"
+        class="svg-inline--fa fa-xmark size-8 sm:size-12"
+        data-icon="xmark"
+        data-prefix="fas"
+        focusable="false"
+        role="img"
+        viewBox="0 0 384 512"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"
+          fill="currentColor"
+        />
+      </svg>
+      <span
+        class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+      >
+        Close
+      </span>
+    </button>
+    <div
+      class="container h-full"
+    />
+  </div>
+</div>
+`;
