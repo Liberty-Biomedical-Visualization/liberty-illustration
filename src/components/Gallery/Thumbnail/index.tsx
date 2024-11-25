@@ -7,8 +7,16 @@ import truncateText from "@/lib/truncateText";
 
 export default function Thumbnail(props: Readonly<ThumbnailProps>) {
   const { imageData, onClick } = props;
+  const { description, title } = imageData;
   const thumbnailImageData = transformToThumbnail(imageData);
-  const { description, height, src, title, width } = thumbnailImageData;
+
+  const {
+    description: thumbnailDescription,
+    height,
+    src,
+    title: thumbnailTitle,
+    width,
+  } = thumbnailImageData;
 
   const className = resolveClassNames(
     "overflow-hidden relative",
@@ -16,15 +24,15 @@ export default function Thumbnail(props: Readonly<ThumbnailProps>) {
   );
 
   const captionId = useId();
-  const titleContent = description ? `${title}:` : title;
+  const titleContent = description ? `${thumbnailTitle}:` : thumbnailTitle;
 
   const descriptionContent = title ? (
     <>
       <br />
-      {description}
+      {thumbnailDescription}
     </>
   ) : (
-    description
+    thumbnailDescription
   );
 
   const caption = (

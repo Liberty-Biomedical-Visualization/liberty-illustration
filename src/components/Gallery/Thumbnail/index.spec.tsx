@@ -61,6 +61,14 @@ describe("Thumbnail", () => {
     expect(figure).toBeVisible();
   });
 
+  it("should display an image with description as accessible name when imageData has a long description", () => {
+    renderThumbnail({ imageData: longDescribedImage });
+    const figure = screen.getByRole("img", {
+      name: longDescribedImage.description,
+    });
+    expect(figure).toBeVisible();
+  });
+
   it("should display a figure with title and description as accessible name when imageData has title and description", () => {
     renderThumbnail({ imageData: completeImage });
     const figure = screen.getByRole("figure", {
