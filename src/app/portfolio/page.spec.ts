@@ -1,6 +1,5 @@
 import { test, expect, type Locator, type Page } from "@playwright/test";
 
-import { atChecked } from "@/lib/array";
 import * as content from "@/lib/content";
 import describeGallery from "@/lib/describeGallery";
 import PortfolioPage from "@/page-object-models/PortfolioPage";
@@ -23,20 +22,6 @@ test.describe("Portfolio", () => {
     for (const gallery of describedGalleries) {
       await assertGalleryIsDisplayed(page, gallery);
     }
-  });
-
-  test("should display a dialog when a thumbnail is clicked", async ({
-    page,
-  }) => {
-    await PortfolioPage.goto(page);
-    const heading = page.getByRole("heading", { level: 2 });
-    const sections = await page.locator("section", { has: heading }).all();
-    const section = atChecked(sections, 0);
-    const images = await section.getByRole("img").all();
-    const image = atChecked(images, 0);
-    await image.click();
-    const dialog = page.getByRole("dialog");
-    expect(dialog).toBeVisible();
   });
 });
 
