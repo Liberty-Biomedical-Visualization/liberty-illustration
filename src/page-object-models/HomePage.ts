@@ -1,6 +1,7 @@
 import type { Page } from "@playwright/test";
 
 import PageLayout from "./PageLayout";
+import PortfolioPage from "./PortfolioPage";
 
 export default class HomePage extends PageLayout {
   static async get(page: Page) {
@@ -22,6 +23,11 @@ export default class HomePage extends PageLayout {
 
   clickNextImageButton() {
     return this.nextImageButton.click();
+  }
+
+  async clickPortfolioLink() {
+    await this.portfolioLink.click();
+    return PortfolioPage.get(this.page);
   }
 
   clickPreviousImageButton() {
