@@ -14,6 +14,9 @@ export const jsonConfiguration = {
     foo: "string",
     zip: "string[]",
   },
+  "Portfolio Configuration": {
+    imageGalleryIds: "string[]",
+  },
   "Site Configuration": {
     amiLogoId: "string",
     cmiLogoId: "string",
