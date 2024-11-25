@@ -4,27 +4,57 @@ import { useState } from "react";
 
 import { type ImageGallery } from "@/lib/content";
 
+import Lightbox, { type LightboxProps } from "./Lightbox";
 import Thumbnail, { type ThumbnailProps } from "./Thumbnail";
 
 export default function Gallery(props: Readonly<GalleryProps>) {
-  const { className, gallery } = props;
+  const {
+    className,
+    disableTabbableDisplayCheck,
+    gallery,
+    lightboxImageTransitionDuration,
+    lightboxVisibilityTransitionDuration,
+  } = props;
+
   const { images, title } = gallery;
-  const [, setSelectedImageIndex] = useState<number | null>(null);
+
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null,
+  );
+
   const thumbnails = images.map((imageData, index) =>
     transformToThumbnail(imageData, index, setSelectedImageIndex),
   );
 
+  const lightboxIsShown = selectedImageIndex !== null;
+  const handleLightboxClose = () => setSelectedImageIndex(null);
+
   return (
-    <section className={className}>
-      <h2 className="text-2xl">{title}</h2>
-      <div className={gridClassName}>{thumbnails}</div>
-    </section>
+    <>
+      {lightboxIsShown && (
+        <Lightbox
+          disableTabbableDisplayCheck={!!disableTabbableDisplayCheck}
+          imageIndex={selectedImageIndex}
+          images={images}
+          imageTransitionDuration={lightboxImageTransitionDuration}
+          onClose={handleLightboxClose}
+          visibilityTransitionDuration={lightboxVisibilityTransitionDuration}
+        />
+      )}
+      <section className={className}>
+        <h2 className="text-2xl">{title}</h2>
+        <div className={gridClassName}>{thumbnails}</div>
+      </section>
+    </>
   );
 }
 
 export interface GalleryProps {
   className?: string;
+  disableTabbableDisplayCheck?: LightboxProps["disableTabbableDisplayCheck"];
   gallery: Readonly<ImageGallery>;
+  lightboxImageTransitionDuration: LightboxProps["imageTransitionDuration"];
+  lightboxVisibilityTransitionDuration: LightboxProps["visibilityTransitionDuration"];
 }
 
 function transformToThumbnail(
