@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 
 import Gallery from "@/components/Gallery";
 import * as content from "@/lib/content";
+import describeGallery from "@/lib/describeGallery";
 
 export default async function Portfolio() {
   const configuration = await content.getJsonByTitle("Portfolio Configuration");
@@ -35,19 +36,3 @@ export default async function Portfolio() {
 export const metadata: Metadata = {
   title: "Portfolio",
 };
-
-function describeGallery(gallery: content.ImageGallery, author: string) {
-  const describedGallery: content.ImageGallery = { ...gallery };
-  const describedImages = gallery.images.map((image) =>
-    describeImage(image, author),
-  );
-  describedGallery.images = describedImages;
-  return describedGallery;
-}
-
-function describeImage(image: content.ImageData, author: string) {
-  const describedImage: content.ImageData = { ...image };
-  describedImage.description ??= `An illustration by ${author}.`;
-  describedImage.title ??= "Untitled";
-  return describedImage;
-}
