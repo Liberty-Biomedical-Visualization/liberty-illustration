@@ -11,7 +11,7 @@ export default function CarouselSlide(props: Readonly<CarouselSlideProps>) {
   const captionId = useId();
 
   const className = resolveClassNames(
-    "flex flex-col items-center sm:justify-center max-h-screen min-w-full sm:px-2 w-full",
+    "flex flex-col items-center sm:justify-center max-h-screen min-w-full px-2 w-full",
     props.className,
   );
 
