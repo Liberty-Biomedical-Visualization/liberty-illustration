@@ -6,6 +6,16 @@ const config: Config = {
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
   ],
+  safelist: [
+    "duration-75",
+    "duration-100",
+    "duration-150",
+    "duration-200",
+    "duration-300",
+    "duration-500",
+    "duration-700",
+    "duration-1000",
+  ],
   theme: {
     extend: {
       colors: {
