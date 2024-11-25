@@ -1,8 +1,11 @@
+import { config as configEnv } from "@dotenvx/dotenvx";
 import {
   defineConfig,
   devices,
   type PlaywrightTestConfig,
 } from "@playwright/test";
+
+configEnv({ quiet: true });
 
 const config: PlaywrightTestConfig = {
   forbidOnly: !!process.env.CI,
