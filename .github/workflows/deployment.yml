@@ -43,6 +43,8 @@ jobs:
       - name: Run E2E Tests
         run: npm run test:e2e:run
         env:
+          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
+          CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
           E2E_BASE_URL: ${{ steps.deploy-staging.outputs.preview-url }}
           E2E_DEPLOYMENT: true
       - name: Upload E2E Report
