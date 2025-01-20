@@ -11,6 +11,7 @@ The following environment variables are required to build and test this website:
 - `CONTENTFUL_ENVIRONMENT`
 - `CONTENTFUL_IMAGE_CDN_HOSTNAME`
 - `CONTENTFUL_SPACE_ID`
+- `SENDGRID_API_KEY`
 
 When possible, these environment variables should be accessed through the
 `src/lib/config.ts` module. This module validates that the environment is

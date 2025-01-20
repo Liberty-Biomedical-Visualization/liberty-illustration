@@ -6,6 +6,7 @@ const environmentVariableNames = [
   "CONTENTFUL_ENVIRONMENT",
   "CONTENTFUL_IMAGE_CDN_HOSTNAME",
   "CONTENTFUL_SPACE_ID",
+  "SENDGRID_API_KEY",
 ] as const;
 
 const entries = environmentVariableNames.map(
