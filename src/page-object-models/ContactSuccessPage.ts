@@ -3,19 +3,20 @@ import type { Page } from "@playwright/test";
 import ContactPage from "./ContactPage";
 import HomePage from "./HomePage";
 import PageLayout from "./PageLayout";
+import PortfilioPage from "./PortfolioPage";
 
-export default class PortfolioPage extends PageLayout {
+export default class ContactSuccessPage extends PageLayout {
   static async get(page: Page) {
     await page.waitForURL(this.path);
-    return new PortfolioPage(page);
+    return new ContactSuccessPage(page);
   }
 
   static async goto(page: Page) {
-    await page.goto("/portfolio");
-    return new PortfolioPage(page);
+    await page.goto(this.path);
+    return new ContactSuccessPage(page);
   }
 
-  static path = "/portfolio";
+  static path = "/contact/success";
 
   async clickContactLink() {
     await this.contactLink.click();
@@ -29,6 +30,11 @@ export default class PortfolioPage extends PageLayout {
 
   async clickPortfolioLink() {
     await this.portfolioLink.click();
-    return PortfolioPage.get(this.page);
+    return PortfilioPage.get(this.page);
   }
+
+  readonly successHeading = this.page.getByRole("heading", {
+    level: 2,
+    name: "Message submitted successfully",
+  });
 }
