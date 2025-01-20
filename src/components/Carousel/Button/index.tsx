@@ -29,4 +29,4 @@ export interface CarouselButtonProps {
 }
 
 const baseClassName =
-  "bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 py-2 sm:px-4 sm:py-12 text-background transition-colors";
+  "active:bg-accent-200 bg-accent-500 disabled:bg-accent-700 hover:bg-accent-300 py-2 sm:px-4 sm:py-12 text-background transition-colors";

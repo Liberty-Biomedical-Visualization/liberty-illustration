@@ -6,7 +6,7 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
     class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center"
   >
     <button
-      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+      class="active:bg-accent-200 bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -85,7 +85,7 @@ exports[`Carousel when passed multiple images should match the snapshot 1`] = `
       </figure>
     </div>
     <button
-      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+      class="active:bg-accent-200 bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -182,7 +182,7 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
     class="gap-4 grid grid-cols-2 grid-rows-[auto_1fr] sm:flex sm:gap-0 sm:justify-center"
   >
     <button
-      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+      class="active:bg-accent-200 bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-1 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
@@ -261,7 +261,7 @@ exports[`Carousel when passed two images should match the snapshot 1`] = `
       </figure>
     </div>
     <button
-      class="bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
+      class="active:bg-accent-200 bg-accent-500 col-span-1 disabled:bg-accent-700 hover:bg-accent-300 my-auto order-2 py-2 sm:order-none sm:px-4 sm:py-12 text-background transition-colors"
     >
       <svg
         aria-hidden="true"
