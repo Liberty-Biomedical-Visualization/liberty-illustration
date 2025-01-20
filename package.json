@@ -1,7 +1,7 @@
 {
   "name": "liberty-illustration",
   "description": "Official website of Liberty Biomedical Visualization",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Nathaniel J. Liberty <nathaniel.liberty@gmail.com> (https://nathanieljliberty.com)",
   "homepage": "https://github.com/Liberty-Biomedical-Visualization/liberty-illustration",
   "private": true,
