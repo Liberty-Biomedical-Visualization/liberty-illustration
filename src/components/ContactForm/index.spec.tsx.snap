@@ -1,0 +1,65 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ContactForm should match the snapshot 1`] = `
+<div>
+  <form
+    class="gap-x-4 grid grid-cols-1 max-w-prose mx-auto sm:grid-cols-2"
+  >
+    <div
+      class="flex flex-col pb-4 relative"
+    >
+      <label
+        for=":r11:"
+      >
+        Email
+      </label>
+      <input
+        class="border p-2"
+        id=":r11:"
+        name="email"
+        required=""
+        type="email"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col pb-4 relative"
+    >
+      <label
+        for=":r12:"
+      >
+        Subject
+      </label>
+      <input
+        class="border p-2"
+        id=":r12:"
+        name="subject"
+        required=""
+        type="text"
+        value=""
+      />
+    </div>
+    <div
+      class="flex flex-col pb-4 relative sm:col-span-2"
+    >
+      <label
+        for=":r13:"
+      >
+        Message
+      </label>
+      <textarea
+        class="border p-2"
+        id=":r13:"
+        name="message"
+        required=""
+      />
+    </div>
+    <button
+      class="active:bg-accent-200 bg-accent-500 col-span-1 sm:col-start-2 disabled:bg-accent-700 hover:bg-accent-300 mt-4 p-2 text-background text-lg transition-colors"
+      type="submit"
+    >
+      Submit
+    </button>
+  </form>
+</div>
+`;
