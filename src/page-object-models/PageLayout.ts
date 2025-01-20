@@ -30,6 +30,9 @@ export default class PageLayout extends PageObjectModel {
     name: "Liberty Biomedical",
   });
 
+  protected contactLink = this.navigation.getByRole("link", {
+    name: "Contact",
+  });
   protected content = this.page.getByRole("main");
   protected homeLink = this.navigation.getByRole("link", { name: "Home" });
   protected portfolioLink = this.navigation.getByRole("link", {

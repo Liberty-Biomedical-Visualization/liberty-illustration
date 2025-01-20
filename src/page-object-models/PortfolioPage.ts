@@ -1,5 +1,6 @@
 import type { Page } from "@playwright/test";
 
+import ContactPage from "./ContactPage";
 import HomePage from "./HomePage";
 import PageLayout from "./PageLayout";
 
@@ -15,6 +16,11 @@ export default class PortfolioPage extends PageLayout {
   }
 
   static path = "/portfolio";
+
+  async clickContactLink() {
+    await this.contactLink.click();
+    return ContactPage.get(this.page);
+  }
 
   async clickHomeLink() {
     await this.homeLink.click();
