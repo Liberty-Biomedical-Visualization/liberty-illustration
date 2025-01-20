@@ -2,6 +2,7 @@ name: Deployment
 on:
   release:
     types: [released]
+  workflow_dispatch:
 concurrency:
   group: deployment
   cancel-in-progress: true
@@ -34,40 +35,6 @@ jobs:
         with:
           scope: ${{ secrets.VERCEL_ORG_ID }}
           vercel-args: |
-            -b CONTACT_RECIPIENT_EMAIL=${{ secrets.CONTACT_RECIPIENT_EMAIL }}
-            -b CONTACT_SENDER_EMAIL=${{ secrets.CONTACT_SENDER_EMAIL }}
-            -b "CONTACT_SENDER_NAME=${{ vars.CONTACT_SENDER_NAME }}"
-            -b CONTENTFUL_ACCESS_TOKEN=${{secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION}}
-            -b CONTENTFUL_ASSET_CDN_HOSTNAME=${{vars.CONTENTFUL_ASSET_CDN_HOSTNAME}}
-            -b CONTENTFUL_ENVIRONMENT=${{vars.CONTENTFUL_ENVIRONMENT_PRODUCTION}}
-            -b CONTENTFUL_IMAGE_CDN_HOSTNAME=${{vars.CONTENTFUL_IMAGE_CDN_HOSTNAME}}
-            -b CONTENTFUL_SPACE_ID=${{ secrets.CONTENTFUL_SPACE_ID }}
-            -b SENDGRID_API_KEY=${{ secrets.SENDGRID_API_KEY }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID}}
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-      - name: Install Playwright Browsers
-        run: npm run test:e2e:install
-      - name: Run E2E Tests
-        run: npm run test:e2e:run
-        env:
-          CONTENTFUL_ACCESS_TOKEN: ${{ secrets.CONTENTFUL_ACCESS_TOKEN_PRODUCTION }}
-          CONTENTFUL_ENVIRONMENT: ${{ vars.CONTENTFUL_ENVIRONMENT_PRODUCTION }}
-          E2E_BASE_URL: ${{ steps.deploy-staging.outputs.preview-url }}
-          E2E_DEPLOYMENT: true
-      - name: Upload E2E Report
-        uses: actions/upload-artifact@v4
-        if: ${{ !cancelled() }}
-        with:
-          name: playwright-report
-          path: playwright-report/
-          retention-days: 30
-      - name: Deploy Production
-        uses: amondnet/vercel-action@v25
-        with:
-          scope: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-args: |
-            --prod
             -b CONTACT_RECIPIENT_EMAIL=${{ secrets.CONTACT_RECIPIENT_EMAIL }}
             -b CONTACT_SENDER_EMAIL=${{ secrets.CONTACT_SENDER_EMAIL }}
             -b "CONTACT_SENDER_NAME=${{ vars.CONTACT_SENDER_NAME }}"
