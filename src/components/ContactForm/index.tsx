@@ -8,6 +8,7 @@ import type postContact from "@/lib/api/postContact";
 import resolveClassNames from "@/lib/resolveClassNames";
 
 import Input from "../Input";
+import withPostContact from "../withPostContact";
 
 export default function ContactForm(props: Readonly<ContactFormProps>) {
   const [email, setEmail] = useState("");
@@ -113,3 +114,5 @@ export interface ContactFormProps {
   className?: string;
   postContact: typeof postContact;
 }
+
+export const ContactFormWithPostContact = withPostContact(ContactForm);
