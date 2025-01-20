@@ -2,15 +2,32 @@
 
 Website of Liberty Biomedical Visualization.
 
+## Contact form
+
+The site uses SendGrid to send contact form emails. Some of the contact form
+email details are configurable using the following environment variables:
+
+- `CONTACT_RECIPIENT_EMAIL`
+- `CONTACT_SENDER_EMAIL`
+- `CONTACT_SENDER_NAME`
+
+A SendGrid API key must also be configured to make requests:
+
+- `SENDGRID_API_KEY`
+
 ## Environment variables
 
 The following environment variables are required to build and test this website:
 
+- `CONTACT_RECIPIENT_EMAIL`
+- `CONTACT_SENDER_EMAIL`
+- `CONTACT_SENDER_NAME`
 - `CONTENTFUL_ACCESS_TOKEN`
 - `CONTENTFUL_ASSET_CDN_HOSTNAME`
 - `CONTENTFUL_ENVIRONMENT`
 - `CONTENTFUL_IMAGE_CDN_HOSTNAME`
 - `CONTENTFUL_SPACE_ID`
+- `SENDGRID_API_KEY`
 
 When possible, these environment variables should be accessed through the
 `src/lib/config.ts` module. This module validates that the environment is

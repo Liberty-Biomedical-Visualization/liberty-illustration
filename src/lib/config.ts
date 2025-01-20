@@ -1,11 +1,15 @@
 import isUndefined from "./isUndefined";
 
 const environmentVariableNames = [
+  "CONTACT_RECIPIENT_EMAIL",
+  "CONTACT_SENDER_EMAIL",
+  "CONTACT_SENDER_NAME",
   "CONTENTFUL_ACCESS_TOKEN",
   "CONTENTFUL_ASSET_CDN_HOSTNAME",
   "CONTENTFUL_ENVIRONMENT",
   "CONTENTFUL_IMAGE_CDN_HOSTNAME",
   "CONTENTFUL_SPACE_ID",
+  "SENDGRID_API_KEY",
 ] as const;
 
 const entries = environmentVariableNames.map(
