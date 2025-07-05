@@ -42,4 +42,7 @@ export default class PageLayout extends PageObjectModel {
   protected navigationToggle = this.page.getByRole("button", {
     name: "Navigation",
   });
+  protected portfolioLink = this.navigation.getByRole("link", {
+    name: "Portfolio",
+  });
 }
