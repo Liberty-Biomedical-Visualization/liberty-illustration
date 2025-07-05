@@ -14,7 +14,7 @@ test.describe("Contact", () => {
     await contactPage.submitButton.click();
 
     const contactSuccessPage = await ContactSuccessPage.get(page);
-    expect(contactSuccessPage.successHeading).toBeVisible();
+    await expect(contactSuccessPage.successHeading).toBeVisible();
   });
 
   test("should display validation errors when server validation fails", async ({
