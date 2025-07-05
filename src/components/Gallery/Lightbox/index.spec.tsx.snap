@@ -4,7 +4,7 @@ exports[`Lightbox when passed multiple images should match the snapshot 1`] = `
 <div>
   <div
     aria-modal="true"
-    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-30"
     role="dialog"
   >
     <button
@@ -201,7 +201,7 @@ exports[`Lightbox when passed one image should match the snapshot 1`] = `
 <div>
   <div
     aria-modal="true"
-    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-30"
     role="dialog"
   >
     <button
@@ -350,7 +350,7 @@ exports[`Lightbox when passed two images should match the snapshot 1`] = `
 <div>
   <div
     aria-modal="true"
-    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-30"
     role="dialog"
   >
     <button
@@ -547,7 +547,7 @@ exports[`Lightbox when passed zero images should match the snapshot 1`] = `
 <div>
   <div
     aria-modal="true"
-    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-10"
+    class="bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center opacity-100 overscroll-contain px-6 py-10 sm:px-14 z-30"
     role="dialog"
   >
     <button
