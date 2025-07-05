@@ -2,8 +2,8 @@ import type { Page } from "@playwright/test";
 
 import ContactPage from "./ContactPage";
 import HomePage from "./HomePage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 import PageLayout from "./PageLayout";
-import PortfilioPage from "./PortfolioPage";
 
 export default class ContactSuccessPage extends PageLayout {
   static async get(page: Page) {
@@ -28,12 +28,12 @@ export default class ContactSuccessPage extends PageLayout {
     return HomePage.get(this.page);
   }
 
-  async clickPortfolioLink() {
-    await this.portfolioLink.click();
-    return PortfilioPage.get(this.page);
+  async clickMedicalIllustrationLink() {
+    await this.medicalIllustration.click();
+    return MedicalIllustrationPage.get(this.page);
   }
 
-  readonly successHeading = this.page.getByRole("heading", {
+  readonly successHeading = this.content.getByRole("heading", {
     level: 2,
     name: "Message submitted successfully",
   });

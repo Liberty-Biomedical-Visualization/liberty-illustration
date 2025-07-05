@@ -39,10 +39,10 @@ export default class PageLayout extends PageObjectModel {
   });
   protected content = this.page.getByRole("main");
   protected homeLink = this.navigation.getByRole("link", { name: "Home" });
+  protected medicalIllustration = this.navigation.getByRole("link", {
+    name: "Medical Illustration",
+  });
   protected navigationToggle = this.page.getByRole("button", {
     name: "Navigation",
-  });
-  protected portfolioLink = this.navigation.getByRole("link", {
-    name: "Portfolio",
   });
 }

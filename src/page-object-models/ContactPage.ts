@@ -2,7 +2,7 @@ import type { Page } from "@playwright/test";
 
 import HomePage from "./HomePage";
 import PageLayout from "./PageLayout";
-import PortfilioPage from "./PortfolioPage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 
 export default class ContactPage extends PageLayout {
   static async get(page: Page) {
@@ -27,9 +27,9 @@ export default class ContactPage extends PageLayout {
     return HomePage.get(this.page);
   }
 
-  async clickPortfolioLink() {
-    await this.portfolioLink.click();
-    return PortfilioPage.get(this.page);
+  async clickMedicalIllustrationLink() {
+    await this.medicalIllustration.click();
+    return MedicalIllustrationPage.get(this.page);
   }
 
   readonly email = this.content.getByLabel("Email");

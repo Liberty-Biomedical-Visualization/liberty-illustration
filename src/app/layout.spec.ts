@@ -2,7 +2,7 @@ import { test, expect } from "@playwright/test";
 
 import ContactPage from "@/page-object-models/ContactPage";
 import HomePage from "@/page-object-models/HomePage";
-import PortfolioPage from "@/page-object-models/PortfolioPage";
+import MedicalIllustrationPage from "@/page-object-models/MedicalIllustrationPage";
 
 test.describe("Layout", () => {
   test("should display site logo", async ({ page }) => {
@@ -45,17 +45,17 @@ test.describe("Layout", () => {
     isMobile,
     page,
   }) => {
-    const portfolioPage = await PortfolioPage.goto(page);
+    const medicalIllustrationPage = await MedicalIllustrationPage.goto(page);
 
     if (isMobile) {
-      await portfolioPage.clickNavigationToggle();
+      await medicalIllustrationPage.clickNavigationToggle();
     }
 
-    await portfolioPage.clickHomeLink();
+    await medicalIllustrationPage.clickHomeLink();
     expect(page.url()).toBe(baseURL + HomePage.path);
   });
 
-  test("should navigate to the Portfolio page when clicking on the Portfolio link", async ({
+  test("should navigate to the Medical Illustration page when clicking on the Medical Illustration link", async ({
     baseURL,
     isMobile,
     page,
@@ -66,8 +66,8 @@ test.describe("Layout", () => {
       await homePage.clickNavigationToggle();
     }
 
-    await homePage.clickPortfolioLink();
-    expect(page.url()).toBe(baseURL + PortfolioPage.path);
+    await homePage.clickMedicalIllustrationLink();
+    expect(page.url()).toBe(baseURL + MedicalIllustrationPage.path);
   });
 
   test("should display CMI logo", async ({ page }) => {

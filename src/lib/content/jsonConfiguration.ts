@@ -17,9 +17,6 @@ export const jsonConfiguration = {
   "Medical Illustration Configuration": {
     imageGalleryId: "string",
   },
-  "Portfolio Configuration": {
-    imageGalleryIds: "string[]",
-  },
   "Site Configuration": {
     amiLogoId: "string",
     cmiLogoId: "string",

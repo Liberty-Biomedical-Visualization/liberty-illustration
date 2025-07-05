@@ -2,7 +2,7 @@ import type { Page } from "@playwright/test";
 
 import ContactPage from "./ContactPage";
 import PageLayout from "./PageLayout";
-import PortfolioPage from "./PortfolioPage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 
 export default class HomePage extends PageLayout {
   static async get(page: Page) {
@@ -31,9 +31,9 @@ export default class HomePage extends PageLayout {
     return this.nextImageButton.click();
   }
 
-  async clickPortfolioLink() {
-    await this.portfolioLink.click();
-    return PortfolioPage.get(this.page);
+  async clickMedicalIllustrationLink() {
+    await this.medicalIllustration.click();
+    return MedicalIllustrationPage.get(this.page);
   }
 
   clickPreviousImageButton() {
