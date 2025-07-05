@@ -4,7 +4,7 @@ import Brand, { type BrandProps } from "./Brand";
 import Nav, { type NavProps } from "./Nav";
 
 export default function Header(props: Readonly<HeaderProps>) {
-  const { logoData, pages } = props;
+  const { disableTabbableDisplayCheck, logoData, pages } = props;
 
   const className = resolveClassNames(
     "flex flex-col items-center",
@@ -14,13 +14,17 @@ export default function Header(props: Readonly<HeaderProps>) {
   return (
     <header className={className}>
       <Brand className="mb-4" logoData={logoData} />
-      <Nav pages={pages} />
+      <Nav
+        disableTabbableDisplayCheck={disableTabbableDisplayCheck}
+        pages={pages}
+      />
     </header>
   );
 }
 
 export interface HeaderProps {
   className?: string;
+  disableTabbableDisplayCheck?: NavProps["disableTabbableDisplayCheck"];
   logoData: BrandProps["logoData"];
   pages: NavProps["pages"];
 }

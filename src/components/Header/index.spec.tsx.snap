@@ -32,13 +32,45 @@ exports[`Header should match the snapshot 1`] = `
         </span>
       </h1>
     </div>
-    <nav
-      class="flex flex-nowrap flex-row"
-    >
-      <ul
-        class="flex flex-nowrap flex-row"
-      />
-    </nav>
+    <div>
+      <button
+        aria-controls="nav"
+        aria-expanded="false"
+        aria-haspopup="true"
+        class="cursor-pointer fixed md:hidden py-0.5 right-4 top-4 z-20"
+        id="nav-list-toggle"
+      >
+        <svg
+          aria-hidden="true"
+          class="svg-inline--fa fa-bars fa-fw fa-2x "
+          data-icon="bars"
+          data-prefix="fas"
+          focusable="false"
+          role="img"
+          viewBox="0 0 448 512"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"
+            fill="currentColor"
+          />
+        </svg>
+        <span
+          class="absolute border-0 h-px m-0 overflow-hidden p-0 w-px whitespace-nowrap"
+        >
+          Navigation
+        </span>
+      </button>
+      <nav
+        aria-labelledby="nav-list-toggle"
+        class="bg-white fixed h-full hidden left-0 md:flex md:h-auto md:static md:visible top-0 w-full z-10"
+        id="nav"
+      >
+        <ul
+          class="md:flex"
+        />
+      </nav>
+    </div>
   </header>
 </div>
 `;

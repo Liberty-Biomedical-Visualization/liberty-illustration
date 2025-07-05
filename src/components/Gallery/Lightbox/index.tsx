@@ -42,7 +42,7 @@ export default function Lightbox(props: Readonly<LightboxProps>) {
       : `${transitionDurationClassNames[visibilityTransitionDuration]} transition`;
 
   const className = resolveClassNames(
-    "bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center overscroll-contain px-6 py-10 sm:px-14 z-10",
+    "bg-foreground/95 fixed flex flex-col inset-0 items-center justify-center overscroll-contain px-6 py-10 sm:px-14 z-30",
     opacity,
     transition,
     props.className,

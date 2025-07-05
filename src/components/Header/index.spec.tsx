@@ -1,5 +1,6 @@
 import { describe, expect, it } from "@jest/globals";
 import { screen } from "@testing-library/dom";
+import userEvent from "@testing-library/user-event";
 
 import { describedImage, minimalImage } from "@/lib/content/test-image-data";
 import createTestRender from "@/lib/createTestRender";
@@ -21,12 +22,19 @@ describe("Header", () => {
     expect(result).toBeVisible();
   });
 
-  it("should display a list of links from passed pages", () => {
+  it("should display a list of links from passed pages when nav list toggle is clicked", async () => {
     const pages = [
       { href: "/", name: "Home" },
       { href: "/portfolio", name: "Portfolio" },
     ];
     renderHeader({ pages });
+
+    const user = userEvent.setup();
+    const listToggle = screen.getByRole("button", { name: "Navigation" });
+    await user.click(listToggle);
+
+    const list = screen.getByRole("list");
+    expect(list).toBeVisible();
 
     const listItems = screen.getAllByRole("listitem");
 
@@ -56,6 +64,7 @@ describe("Header", () => {
 });
 
 const renderHeader = createTestRender(Header, {
+  disableTabbableDisplayCheck: true,
   logoData: minimalImage,
   pages: [],
 });

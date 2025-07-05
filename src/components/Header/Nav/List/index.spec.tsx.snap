@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavList should match the snapshot 1`] = `
+<div>
+  <ul
+    class="md:flex"
+  />
+</div>
+`;

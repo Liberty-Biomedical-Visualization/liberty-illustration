@@ -3,6 +3,10 @@ import type { Locator, Page } from "@playwright/test";
 import PageObjectModel from "./PageObjectModel";
 
 export default class PageLayout extends PageObjectModel {
+  clickNavigationToggle() {
+    return this.navigationToggle.click();
+  }
+
   protected constructor(page: Page) {
     super(page);
     const currentYear = new Date().getFullYear();
@@ -35,6 +39,9 @@ export default class PageLayout extends PageObjectModel {
   });
   protected content = this.page.getByRole("main");
   protected homeLink = this.navigation.getByRole("link", { name: "Home" });
+  protected navigationToggle = this.page.getByRole("button", {
+    name: "Navigation",
+  });
   protected portfolioLink = this.navigation.getByRole("link", {
     name: "Portfolio",
   });

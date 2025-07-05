@@ -15,34 +15,57 @@ test.describe("Layout", () => {
     await expect(homePage.siteHeading).toBeVisible();
   });
 
-  test("should display navigation", async ({ page }) => {
+  test("should display navigation", async ({ isMobile, page }) => {
     const homePage = await HomePage.goto(page);
+
+    if (isMobile) {
+      await homePage.clickNavigationToggle();
+    }
+
     await expect(homePage.navigation).toBeVisible();
   });
 
   test("should navigate to the Contact page clicking on the Contact link", async ({
     baseURL,
+    isMobile,
     page,
   }) => {
     const homePage = await HomePage.goto(page);
+
+    if (isMobile) {
+      await homePage.clickNavigationToggle();
+    }
+
     await homePage.clickContactLink();
     expect(page.url()).toBe(baseURL + ContactPage.path);
   });
 
   test("should navigate to the Home page clicking on the Home link", async ({
     baseURL,
+    isMobile,
     page,
   }) => {
     const portfolioPage = await PortfolioPage.goto(page);
+
+    if (isMobile) {
+      await portfolioPage.clickNavigationToggle();
+    }
+
     await portfolioPage.clickHomeLink();
     expect(page.url()).toBe(baseURL + HomePage.path);
   });
 
   test("should navigate to the Portfolio page when clicking on the Portfolio link", async ({
     baseURL,
+    isMobile,
     page,
   }) => {
     const homePage = await HomePage.goto(page);
+
+    if (isMobile) {
+      await homePage.clickNavigationToggle();
+    }
+
     await homePage.clickPortfolioLink();
     expect(page.url()).toBe(baseURL + PortfolioPage.path);
   });
