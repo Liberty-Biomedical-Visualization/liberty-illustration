@@ -14,6 +14,9 @@ export const jsonConfiguration = {
     foo: "string",
     zip: "string[]",
   },
+  "Medical Illustration Configuration": {
+    imageGalleryId: "string",
+  },
   "Portfolio Configuration": {
     imageGalleryIds: "string[]",
   },
