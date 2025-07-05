@@ -1,5 +1,6 @@
 import type { Page } from "@playwright/test";
 
+import DesignPage from "./DesignPage";
 import HomePage from "./HomePage";
 import PageLayout from "./PageLayout";
 import MedicalIllustrationPage from "./MedicalIllustrationPage";
@@ -20,6 +21,11 @@ export default class ContactPage extends PageLayout {
   async clickContactLink() {
     await this.contactLink.click();
     return ContactPage.get(this.page);
+  }
+
+  async clickDesignLink() {
+    await this.designLink.click();
+    return DesignPage.get(this.page);
   }
 
   async clickHomeLink() {
