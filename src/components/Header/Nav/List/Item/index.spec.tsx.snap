@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavListItem should match the snapshot 1`] = `
+<div>
+  <li
+    class="mb-4 md:mb-0 text-2xl text-center"
+  >
+    <a
+      class="active:text-accent-400 block hover:text-accent-600 md:inline md:p-0 md:text-lg md:transition md:uppercase p-4 text-accent-800"
+      href="/"
+    >
+      Home
+    </a>
+  </li>
+</div>
+`;
