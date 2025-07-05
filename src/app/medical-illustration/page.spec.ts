@@ -7,7 +7,7 @@ import MedicalIllustrationPage from "@/page-object-models/MedicalIllustrationPag
 test.describe("Medical Illustration", () => {
   test("should display the page heading", async ({ page }) => {
     const medicalIllustrationPage = await MedicalIllustrationPage.goto(page);
-    expect(medicalIllustrationPage.pageHeading).toBeVisible();
+    await expect(medicalIllustrationPage.pageHeading).toBeVisible();
   });
 
   test("should display a thumbnail for each image", async ({ page }) => {

@@ -4,6 +4,11 @@ import ContactPage from "@/page-object-models/ContactPage";
 import ContactSuccessPage from "@/page-object-models/ContactSuccessPage";
 
 test.describe("Contact", () => {
+  test("should display the page heading", async ({ page }) => {
+    const contactPage = await ContactPage.goto(page);
+    await expect(contactPage.pageHeading).toBeVisible();
+  });
+
   test("should submit a contact form successfully", async ({ page }) => {
     await page.route("/api/contact", (route) => route.fulfill({ status: 204 }));
 

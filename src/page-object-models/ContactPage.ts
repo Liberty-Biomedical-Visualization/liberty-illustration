@@ -34,6 +34,10 @@ export default class ContactPage extends PageLayout {
 
   readonly email = this.content.getByLabel("Email");
   readonly message = this.content.getByLabel("Message");
+  readonly pageHeading = this.content.getByRole("heading", {
+    level: 2,
+    name: "Contact",
+  });
   readonly serverError = this.content.getByText("Oops! Something went wrong.");
   readonly subject = this.content.getByLabel("Subject");
   readonly submitButton = this.content.getByRole("button", { name: "Submit" });
