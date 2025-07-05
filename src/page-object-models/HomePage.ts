@@ -1,8 +1,9 @@
 import type { Page } from "@playwright/test";
 
 import ContactPage from "./ContactPage";
+import DesignPage from "./DesignPage";
 import PageLayout from "./PageLayout";
-import PortfolioPage from "./PortfolioPage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 
 export default class HomePage extends PageLayout {
   static async get(page: Page) {
@@ -22,6 +23,11 @@ export default class HomePage extends PageLayout {
     return ContactPage.get(this.page);
   }
 
+  async clickDesignLink() {
+    await this.designLink.click();
+    return DesignPage.get(this.page);
+  }
+
   async clickHomeLink() {
     await this.homeLink.click();
     return HomePage.get(this.page);
@@ -31,9 +37,9 @@ export default class HomePage extends PageLayout {
     return this.nextImageButton.click();
   }
 
-  async clickPortfolioLink() {
-    await this.portfolioLink.click();
-    return PortfolioPage.get(this.page);
+  async clickMedicalIllustrationLink() {
+    await this.medicalIllustration.click();
+    return MedicalIllustrationPage.get(this.page);
   }
 
   clickPreviousImageButton() {

@@ -2,6 +2,9 @@
  * Expected structure of JSON entries in Contentful.
  */
 export const jsonConfiguration = {
+  "Design Configuration": {
+    imageGalleryId: "string",
+  },
   "Home Configuration": {
     carouselImageGalleryId: "string",
     slideDuration: "number",
@@ -14,8 +17,8 @@ export const jsonConfiguration = {
     foo: "string",
     zip: "string[]",
   },
-  "Portfolio Configuration": {
-    imageGalleryIds: "string[]",
+  "Medical Illustration Configuration": {
+    imageGalleryId: "string",
   },
   "Site Configuration": {
     amiLogoId: "string",

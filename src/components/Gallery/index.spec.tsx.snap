@@ -2,15 +2,8 @@
 
 exports[`Gallery should match the snapshot 1`] = `
 <div>
-  <section>
-    <h2
-      class="text-2xl"
-    >
-      Minimal Image Gallery
-    </h2>
-    <div
-      class="2xl:grid-cols-[repeat(6,minmax(0,256px))] gap-4 grid grid-cols-[repeat(3,minmax(0,256px))] lg:grid-cols-[repeat(4,minmax(0,256px))] max-w-fit xl:grid-cols-[repeat(5,minmax(0,256px))]"
-    />
-  </section>
+  <div
+    class="2xl:grid-cols-[repeat(6,minmax(0,256px))] gap-4 grid grid-cols-[repeat(3,minmax(0,256px))] lg:grid-cols-[repeat(4,minmax(0,256px))] max-w-fit xl:grid-cols-[repeat(5,minmax(0,256px))]"
+  />
 </div>
 `;

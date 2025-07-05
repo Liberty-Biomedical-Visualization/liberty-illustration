@@ -3,21 +3,20 @@ import type { Page } from "@playwright/test";
 import ContactPage from "./ContactPage";
 import DesignPage from "./DesignPage";
 import HomePage from "./HomePage";
-import MedicalIllustrationPage from "./MedicalIllustrationPage";
 import PageLayout from "./PageLayout";
 
-export default class ContactSuccessPage extends PageLayout {
+export default class MedicalIllustrationPage extends PageLayout {
   static async get(page: Page) {
     await page.waitForURL(this.path);
-    return new ContactSuccessPage(page);
+    return new MedicalIllustrationPage(page);
   }
 
   static async goto(page: Page) {
-    await page.goto(this.path);
-    return new ContactSuccessPage(page);
+    await page.goto(MedicalIllustrationPage.path);
+    return new MedicalIllustrationPage(page);
   }
 
-  static path = "/contact/success";
+  static path = "/medical-illustration";
 
   async clickContactLink() {
     await this.contactLink.click();
@@ -39,8 +38,8 @@ export default class ContactSuccessPage extends PageLayout {
     return MedicalIllustrationPage.get(this.page);
   }
 
-  readonly successHeading = this.content.getByRole("heading", {
+  readonly pageHeading = this.content.getByRole("heading", {
     level: 2,
-    name: "Message submitted successfully",
+    name: "Medical Illustration",
   });
 }

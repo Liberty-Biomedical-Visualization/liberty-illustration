@@ -13,15 +13,6 @@ import createTestRender from "@/lib/createTestRender";
 import Gallery from ".";
 
 describe("Gallery", () => {
-  it("should display a second level heading with the gallery title", () => {
-    renderGallery({ gallery: minimalImageGallery });
-    const heading = screen.getByRole("heading", {
-      level: 2,
-      name: minimalImageGallery.title,
-    });
-    expect(heading).toBeVisible();
-  });
-
   it("should display thumbnails when the gallery has images", () => {
     renderGallery({ gallery: completeImageGallery });
 

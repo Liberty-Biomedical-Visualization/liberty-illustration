@@ -1,8 +1,9 @@
 import type { Page } from "@playwright/test";
 
+import DesignPage from "./DesignPage";
 import HomePage from "./HomePage";
 import PageLayout from "./PageLayout";
-import PortfilioPage from "./PortfolioPage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 
 export default class ContactPage extends PageLayout {
   static async get(page: Page) {
@@ -22,18 +23,27 @@ export default class ContactPage extends PageLayout {
     return ContactPage.get(this.page);
   }
 
+  async clickDesignLink() {
+    await this.designLink.click();
+    return DesignPage.get(this.page);
+  }
+
   async clickHomeLink() {
     await this.homeLink.click();
     return HomePage.get(this.page);
   }
 
-  async clickPortfolioLink() {
-    await this.portfolioLink.click();
-    return PortfilioPage.get(this.page);
+  async clickMedicalIllustrationLink() {
+    await this.medicalIllustration.click();
+    return MedicalIllustrationPage.get(this.page);
   }
 
   readonly email = this.content.getByLabel("Email");
   readonly message = this.content.getByLabel("Message");
+  readonly pageHeading = this.content.getByRole("heading", {
+    level: 2,
+    name: "Contact",
+  });
   readonly serverError = this.content.getByText("Oops! Something went wrong.");
   readonly subject = this.content.getByLabel("Subject");
   readonly submitButton = this.content.getByRole("button", { name: "Submit" });

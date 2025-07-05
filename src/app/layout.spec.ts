@@ -1,8 +1,9 @@
 import { test, expect } from "@playwright/test";
 
 import ContactPage from "@/page-object-models/ContactPage";
+import DesignPage from "@/page-object-models/DesignPage";
 import HomePage from "@/page-object-models/HomePage";
-import PortfolioPage from "@/page-object-models/PortfolioPage";
+import MedicalIllustrationPage from "@/page-object-models/MedicalIllustrationPage";
 
 test.describe("Layout", () => {
   test("should display site logo", async ({ page }) => {
@@ -40,22 +41,7 @@ test.describe("Layout", () => {
     expect(page.url()).toBe(baseURL + ContactPage.path);
   });
 
-  test("should navigate to the Home page clicking on the Home link", async ({
-    baseURL,
-    isMobile,
-    page,
-  }) => {
-    const portfolioPage = await PortfolioPage.goto(page);
-
-    if (isMobile) {
-      await portfolioPage.clickNavigationToggle();
-    }
-
-    await portfolioPage.clickHomeLink();
-    expect(page.url()).toBe(baseURL + HomePage.path);
-  });
-
-  test("should navigate to the Portfolio page when clicking on the Portfolio link", async ({
+  test("should navigate to the Design page when clicking on the Design link", async ({
     baseURL,
     isMobile,
     page,
@@ -66,8 +52,38 @@ test.describe("Layout", () => {
       await homePage.clickNavigationToggle();
     }
 
-    await homePage.clickPortfolioLink();
-    expect(page.url()).toBe(baseURL + PortfolioPage.path);
+    await homePage.clickDesignLink();
+    expect(page.url()).toBe(baseURL + DesignPage.path);
+  });
+
+  test("should navigate to the Home page clicking on the Home link", async ({
+    baseURL,
+    isMobile,
+    page,
+  }) => {
+    const medicalIllustrationPage = await MedicalIllustrationPage.goto(page);
+
+    if (isMobile) {
+      await medicalIllustrationPage.clickNavigationToggle();
+    }
+
+    await medicalIllustrationPage.clickHomeLink();
+    expect(page.url()).toBe(baseURL + HomePage.path);
+  });
+
+  test("should navigate to the Medical Illustration page when clicking on the Medical Illustration link", async ({
+    baseURL,
+    isMobile,
+    page,
+  }) => {
+    const homePage = await HomePage.goto(page);
+
+    if (isMobile) {
+      await homePage.clickNavigationToggle();
+    }
+
+    await homePage.clickMedicalIllustrationLink();
+    expect(page.url()).toBe(baseURL + MedicalIllustrationPage.path);
   });
 
   test("should display CMI logo", async ({ page }) => {

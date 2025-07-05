@@ -3,20 +3,20 @@
 import { useState } from "react";
 
 import { type ImageGallery } from "@/lib/content";
+import resolveClassNames from "@/lib/resolveClassNames";
 
 import Lightbox, { type LightboxProps } from "./Lightbox";
 import Thumbnail, { type ThumbnailProps } from "./Thumbnail";
 
 export default function Gallery(props: Readonly<GalleryProps>) {
   const {
-    className,
     disableTabbableDisplayCheck,
     gallery,
     lightboxImageTransitionDuration,
     lightboxVisibilityTransitionDuration,
   } = props;
 
-  const { images, title } = gallery;
+  const { images } = gallery;
 
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
     null,
@@ -28,6 +28,7 @@ export default function Gallery(props: Readonly<GalleryProps>) {
 
   const lightboxIsShown = selectedImageIndex !== null;
   const handleLightboxClose = () => setSelectedImageIndex(null);
+  const className = resolveClassNames(props.className, gridClassName);
 
   return (
     <>
@@ -41,10 +42,7 @@ export default function Gallery(props: Readonly<GalleryProps>) {
           visibilityTransitionDuration={lightboxVisibilityTransitionDuration}
         />
       )}
-      <section className={className}>
-        <h2 className="text-2xl">{title}</h2>
-        <div className={gridClassName}>{thumbnails}</div>
-      </section>
+      <div className={className}>{thumbnails}</div>
     </>
   );
 }

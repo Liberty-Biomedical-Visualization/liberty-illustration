@@ -38,11 +38,14 @@ export default class PageLayout extends PageObjectModel {
     name: "Contact",
   });
   protected content = this.page.getByRole("main");
+  protected designLink = this.navigation.getByRole("link", {
+    name: "Design",
+  });
   protected homeLink = this.navigation.getByRole("link", { name: "Home" });
+  protected medicalIllustration = this.navigation.getByRole("link", {
+    name: "Medical Illustration",
+  });
   protected navigationToggle = this.page.getByRole("button", {
     name: "Navigation",
-  });
-  protected portfolioLink = this.navigation.getByRole("link", {
-    name: "Portfolio",
   });
 }

@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PageHeading should match the snapshot 1`] = `
+<div>
+  <h2
+    class="sm:text-3xl text-2xl text-center"
+  >
+    Medical Illustration
+  </h2>
+</div>
+`;

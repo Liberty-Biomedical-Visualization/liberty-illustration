@@ -130,8 +130,11 @@ function transformToPageName(pagePath: string) {
     return "Home";
   }
 
-  const basename = path.basename(pagePath);
-  return basename.slice(0, 1).toUpperCase() + basename.slice(1);
+  return path
+    .basename(pagePath)
+    .split("-")
+    .map((word) => word.slice(0, 1).toUpperCase() + word.slice(1))
+    .join(" ");
 }
 
 function movePageToIndex(

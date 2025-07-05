@@ -11,7 +11,7 @@ describe("Brand", () => {
     renderBrand();
     const result = screen.getByRole("heading", {
       level: 1,
-      name: "Abigail Richbourg Liberty, MS, CMI Biomedical illustration • Animation • Graphic design",
+      name: "Abigail Richbourg Liberty, MS, CMI",
     });
     expect(result).toBeVisible();
   });
