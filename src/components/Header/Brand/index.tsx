@@ -18,10 +18,7 @@ export default function Brand(props: BrandProps) {
         width={width}
       />
       <h1 className="font-light sm:text-3xl text-2xl text-center text-nowrap">
-        Abigail Richbourg Liberty, MS, CMI <br />
-        <span className="sm:text-lg text-sm">
-          Biomedical illustration • Animation • Graphic design
-        </span>
+        Abigail Richbourg Liberty, MS, CMI
       </h1>
     </div>
   );
