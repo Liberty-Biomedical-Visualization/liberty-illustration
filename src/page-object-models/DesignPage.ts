@@ -3,6 +3,7 @@ import type { Page } from "@playwright/test";
 import AnimationPage from "./AnimationPage";
 import ContactPage from "./ContactPage";
 import HomePage from "./HomePage";
+import MedicalIllustrationPage from "./MedicalIllustrationPage";
 import PageLayout from "./PageLayout";
 
 export default class DesignPage extends PageLayout {
@@ -40,7 +41,7 @@ export default class DesignPage extends PageLayout {
 
   async clickMedicalIllustrationLink() {
     await this.medicalIllustration.click();
-    return DesignPage.get(this.page);
+    return MedicalIllustrationPage.get(this.page);
   }
 
   readonly pageHeading = this.content.getByRole("heading", {

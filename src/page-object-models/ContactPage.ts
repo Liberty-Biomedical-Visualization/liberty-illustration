@@ -3,8 +3,8 @@ import type { Page } from "@playwright/test";
 import AnimationPage from "./AnimationPage";
 import DesignPage from "./DesignPage";
 import HomePage from "./HomePage";
-import PageLayout from "./PageLayout";
 import MedicalIllustrationPage from "./MedicalIllustrationPage";
+import PageLayout from "./PageLayout";
 
 export default class ContactPage extends PageLayout {
   static async get(page: Page) {
