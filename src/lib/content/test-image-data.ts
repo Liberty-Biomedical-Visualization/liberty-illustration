@@ -1,5 +1,5 @@
 import config from "../config";
-import { ImageData } from ".";
+import type { ImageData } from ".";
 
 export const completeImage: Readonly<Required<ImageData>> = {
   description: "A complete image used for testing.",

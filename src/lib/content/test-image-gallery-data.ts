@@ -3,7 +3,7 @@ import { ImageGallery } from ".";
 
 export const completeImageGallery: Readonly<ImageGallery> = {
   images: [imageA, imageB, imageC],
-  title: "Minimal Image Gallery",
+  title: "Complete Image Gallery",
 };
 
 export const minimalImageGallery: Readonly<ImageGallery> = {
