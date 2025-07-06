@@ -75,6 +75,26 @@ export async function getJsonByTitle<K extends JsonTitle>(title: K) {
   return json.fields.value;
 }
 
+/**
+ * Gets a `VideoGallery` by ID.
+ *
+ * Throws an `Error` if the gallery is not found.
+ */
+export async function getVideoGallery(id: string) {
+  const entry = await client.getEntry<VideoGallerySkeleton>(id);
+  return mapEntryToVideoGallery(entry);
+}
+
+export interface VideoGallery {
+  title: string;
+  videos: VideoData[];
+}
+
+export interface VideoData {
+  title: string;
+  url: string;
+}
+
 function mapContentfulAssetToAssetData(asset: ContentfulAsset) {
   const { description, file, title } = asset.fields;
 
@@ -145,6 +165,37 @@ interface ImageGallerySkeleton {
   fields: {
     images: contentful.EntryFieldTypes.Array<contentful.EntryFieldTypes.AssetLink>;
     title: contentful.EntryFieldTypes.Text;
+  };
+}
+
+function mapEntryToVideoGallery(entry: VideoGalleryEntry) {
+  const { title, videos } = entry.fields;
+  const mappedVideos = videos.filter(isDefined).map((video) => video.fields);
+  const gallery: VideoGallery = { title, videos: mappedVideos };
+  return gallery;
+}
+
+type VideoGalleryEntry = contentful.Entry<
+  VideoGallerySkeleton,
+  "WITHOUT_UNRESOLVABLE_LINKS",
+  string
+>;
+
+interface VideoGallerySkeleton {
+  contentTypeId: "imageGallery";
+  fields: {
+    title: contentful.EntryFieldTypes.Text;
+    videos: contentful.EntryFieldTypes.Array<
+      contentful.EntryFieldTypes.EntryLink<VideoLinkSkeleton>
+    >;
+  };
+}
+
+interface VideoLinkSkeleton {
+  contentTypeId: "videoLink";
+  fields: {
+    title: contentful.EntryFieldTypes.Text;
+    url: contentful.EntryFieldTypes.Text;
   };
 }
 
