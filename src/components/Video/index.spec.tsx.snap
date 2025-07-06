@@ -1,0 +1,24 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Video should match the snapshot 1`] = `
+<div>
+  <figure
+    aria-labelledby=":r4:"
+  >
+    <figcaption
+      class="mb-2 sm:text-2xl text-xl"
+      id=":r4:"
+    >
+      Video A
+    </figcaption>
+    <iframe
+      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+      allowfullscreen=""
+      class="aspect-video w-full"
+      referrerpolicy="strict-origin-when-cross-origin"
+      src="https://www.youtube.com/embed/a"
+      title="Video A"
+    />
+  </figure>
+</div>
+`;

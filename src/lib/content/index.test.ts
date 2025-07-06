@@ -2,6 +2,7 @@ import { describe, expect, it } from "@jest/globals";
 
 import { integrationTestAsset } from "./test-asset-data";
 import { integrationTestImage } from "./test-image-data";
+import { integrationTestVideo } from "./test-video-data";
 import * as content from ".";
 
 describe("content", () => {
@@ -105,6 +106,40 @@ describe("content", () => {
     it("should reject when the entry is not a JSON object", async () => {
       const title = "Integration Test Gallery";
       const result = content.getJsonByTitle(title as "Integration Test JSON");
+      await expect(result).rejects.toBeInstanceOf(Error);
+    });
+  });
+
+  describe("getVideoGallery", () => {
+    it("should resolve to an video gallery", async () => {
+      /**
+       * `VideoGallery` titled "Integration Test Video Gallery".
+       */
+      const id = "5LtD1WTR1k1jPi3XjmVksw";
+      const result = content.getVideoGallery(id);
+      const expected: content.VideoGallery = {
+        title: "Integration Test Video Gallery",
+        videos: [
+          integrationTestVideo,
+          integrationTestVideo,
+          integrationTestVideo,
+        ],
+      };
+      await expect(result).resolves.toEqual(expected);
+    });
+
+    it("should reject when the video gallery is not found", async () => {
+      const id = "n0t4r3a1iD";
+      const result = content.getVideoGallery(id);
+      await expect(result).rejects.toBeInstanceOf(Error);
+    });
+
+    it("should reject when the entry is not an image gallery", async () => {
+      /**
+       * `JSON` titled "Integration Test JSON".
+       */
+      const id = "4XVQ4uT86oNKYqp9VQZ7XZ";
+      const result = content.getVideoGallery(id);
       await expect(result).rejects.toBeInstanceOf(Error);
     });
   });
