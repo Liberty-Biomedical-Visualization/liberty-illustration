@@ -34,6 +34,9 @@ export default class PageLayout extends PageObjectModel {
     name: "Liberty Biomedical",
   });
 
+  protected animationLink = this.navigation.getByRole("link", {
+    name: "Animation",
+  });
   protected contactLink = this.navigation.getByRole("link", {
     name: "Contact",
   });

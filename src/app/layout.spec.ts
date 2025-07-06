@@ -1,5 +1,6 @@
 import { test, expect } from "@playwright/test";
 
+import AnimationPage from "@/page-object-models/AnimationPage";
 import ContactPage from "@/page-object-models/ContactPage";
 import DesignPage from "@/page-object-models/DesignPage";
 import HomePage from "@/page-object-models/HomePage";
@@ -24,6 +25,21 @@ test.describe("Layout", () => {
     }
 
     await expect(homePage.navigation).toBeVisible();
+  });
+
+  test("should navigate to the Animation page clicking on the Animation link", async ({
+    baseURL,
+    isMobile,
+    page,
+  }) => {
+    const homePage = await HomePage.goto(page);
+
+    if (isMobile) {
+      await homePage.clickNavigationToggle();
+    }
+
+    await homePage.clickAnimationLink();
+    expect(page.url()).toBe(baseURL + AnimationPage.path);
   });
 
   test("should navigate to the Contact page clicking on the Contact link", async ({
