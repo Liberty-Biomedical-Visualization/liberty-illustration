@@ -15,6 +15,7 @@ export default function Brand(props: BrandProps) {
         src={src}
         title={title}
         priority
+        quality={100}
         width={width}
       />
       <h1 className="font-light sm:text-3xl text-2xl text-center text-nowrap">
